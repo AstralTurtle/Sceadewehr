@@ -6,6 +6,7 @@ var tile_scene: PackedScene = load("res://Tile.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	fill_board()
+	pass
 
 func fill_board():
 	for i in range(0, 64):
