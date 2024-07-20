@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dncixqs8oj5ni"]
+[gd_scene load_steps=4 format=3 uid="uid://dncixqs8oj5ni"]
 
 [ext_resource type="Script" path="res://src/player_ui.gd" id="1_ydabh"]
+[ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_gyerk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uhltx"]
 font_size = 35
@@ -48,6 +49,7 @@ size_flags_vertical = 3
 [node name="AlchemistCircle" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("2_gyerk")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/AlchemistCircle"]
 layout_mode = 1
