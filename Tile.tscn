@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2rm83c4pj0y5"]
+
+[ext_resource type="Script" path="res://src/tile.gd" id="1_ebuk7"]
+
+[node name="Tile" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ebuk7")
