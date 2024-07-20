@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dncixqs8oj5ni"]
+[gd_scene load_steps=3 format=3 uid="uid://dncixqs8oj5ni"]
+
+[ext_resource type="Script" path="res://src/player_ui.gd" id="1_ydabh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uhltx"]
 font_size = 35
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ydabh")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -32,13 +35,13 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/v_separation = 25
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Player 1"
+text = "Player"
 label_settings = SubResource("LabelSettings_uhltx")
 horizontal_alignment = 1
 
-[node name="Inventory" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Inventory" type="FlowContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 

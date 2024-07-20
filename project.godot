@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Sceadewehr"
+run/main_scene="res://main_world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Sceadewehr"
+"<<<<<<<HEAD[editor_plugins]enabled"=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
 [editor_plugins]
 
