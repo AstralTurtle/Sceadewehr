@@ -13,6 +13,7 @@ func fill_board():
 		var tile_type: Tile.ElementType = randi_range(0, 6) as Tile.ElementType
 		var tile: Tile = tile_scene.instantiate()
 		tile.tile_type = tile_type
+		tile.side_length = size.x/8
 		tiles.append(tile)
 		add_child(tile)
 

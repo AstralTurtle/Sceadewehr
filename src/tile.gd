@@ -2,7 +2,7 @@ extends TextureRect
 class_name Tile
 
 @export var tile_type: ElementType
-var side_length: float = 5
+var side_length: float = 50
 
 enum ElementType {
 	# The elements
@@ -28,5 +28,6 @@ func _ready():
 	elif tile_type == ElementType.MERCURY:
 		pass
 	texture = load("res://icon.svg")
-	size.x = side_length
-	size.y = side_length
+	custom_minimum_size.x = side_length
+	custom_minimum_size.y = side_length
+	
