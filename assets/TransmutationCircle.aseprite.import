@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://dm3jmjrfs8naw"
+path="res://.godot/imported/TransmutationCircle.aseprite-a0e64e5eaa1e0c81118622a545681cd0.res"
+
+[deps]
+
+source_file="res://assets/TransmutationCircle.aseprite"
+dest_files=["res://.godot/imported/TransmutationCircle.aseprite-a0e64e5eaa1e0c81118622a545681cd0.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

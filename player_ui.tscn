@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cppqvlypbi5wh"]
 
 [ext_resource type="Script" path="res://src/player_ui.gd" id="1_ydabh"]
-[ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_gyerk"]
+[ext_resource type="PackedScene" uid="uid://dhm3gg86ro6vg" path="res://AlchemistCircle.tscn" id="2_bqdh4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uhltx"]
 font_size = 35
@@ -46,19 +46,17 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AlchemistCircle" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("2_gyerk")
-recipies = null
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/AlchemistCircle"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="AlchemistCircle" parent="MarginContainer/HBoxContainer/VBoxContainer/Control" instance=ExtResource("2_bqdh4")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 128.0
+offset_bottom = 128.0
 
 [node name="ResultBox" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
