@@ -1,7 +1,7 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
 uid="uid://clwoixk5xjlv8"
 path="res://.godot/imported/Mercury.aseprite-e66e971949f2fe0a552f431b99f5f3f7.res"
 
@@ -12,3 +12,5 @@ dest_files=["res://.godot/imported/Mercury.aseprite-e66e971949f2fe0a552f431b99f5
 
 [params]
 
+exclude_layers_pattern=""
+only_visible_layers=false

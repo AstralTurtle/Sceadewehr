@@ -1,7 +1,7 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
 uid="uid://cqrf2mxdxv8h5"
 path="res://.godot/imported/Fire.aseprite-d781750872e0d132e32f266664ca6008.res"
 
@@ -12,3 +12,5 @@ dest_files=["res://.godot/imported/Fire.aseprite-d781750872e0d132e32f266664ca600
 
 [params]
 
+exclude_layers_pattern=""
+only_visible_layers=false

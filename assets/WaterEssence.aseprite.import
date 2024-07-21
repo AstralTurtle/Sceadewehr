@@ -1,7 +1,7 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
 uid="uid://k5jco50hs6ge"
 path="res://.godot/imported/WaterEssence.aseprite-914afe159a5dcd2f3359389a9f72c7ad.res"
 
@@ -12,3 +12,5 @@ dest_files=["res://.godot/imported/WaterEssence.aseprite-914afe159a5dcd2f3359389
 
 [params]
 
+exclude_layers_pattern=""
+only_visible_layers=false
