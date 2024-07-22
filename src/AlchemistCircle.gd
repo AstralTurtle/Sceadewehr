@@ -27,6 +27,11 @@ func clear_items():
 		emit_signal(send_back.get_name(), item)
 	holdings.clear()
 
+func clear_item(ind: int):
+	held_recipe = null
+	emit_signal(send_back.get_name(), holdings[ind])
+	holdings.remove_at(ind)
+
 func add_item(item: Tile.ElementType):
 	if(holdings.size() >= 2):
 		emit_signal(send_back.get_name(), item)
