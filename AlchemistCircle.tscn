@@ -13,7 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rj6li")
 script = ExtResource("2_csryf")
-recipies = null
 
 [node name="Slot1" type="Button" parent="."]
 layout_mode = 1
