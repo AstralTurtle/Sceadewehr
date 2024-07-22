@@ -17,23 +17,21 @@ script = ExtResource("2_csryf")
 [node name="Slot1" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.125
-anchor_top = 0.5
-anchor_right = 0.125
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -9.0
-offset_right = 8.0
-offset_bottom = 9.0
+anchor_top = 0.359
+anchor_right = 0.25
+anchor_bottom = 0.641
+offset_top = 0.0239983
+offset_bottom = -0.0240021
 
 [node name="Slot2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.875
-anchor_top = 0.5
-anchor_right = 0.875
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -9.0
-offset_right = 8.0
-offset_bottom = 9.0
+anchor_left = 0.75
+anchor_top = 0.359
+anchor_right = 1.0
+anchor_bottom = 0.641
+offset_top = 0.0239983
+offset_bottom = -0.0240021
+
+[connection signal="button_up" from="Slot1" to="." method="clear_item" binds= [0]]
+[connection signal="button_up" from="Slot2" to="." method="clear_item" binds= [1]]

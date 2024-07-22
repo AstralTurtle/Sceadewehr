@@ -4,13 +4,17 @@ class_name Tile
 @export var tile_type: ElementType
 var side_length: float = 50
 
+var pos: Vector2
+
+signal tile_selected(Vector2)
+
 # set in editor
 @export var tile_images = {
 	ElementType.AIR: load('res://assets/Air.png'),
 	ElementType.WATER: load('res://assets/Water.png'),
 	ElementType.FIRE: load('res://assets/Fire.png'),
 	ElementType.EARTH: load('res://assets/Earth.png'),
-	ElementType.BODY:  load('res://assets/Body.png'),
+	ElementType.BODY: load('res://assets/Body.png'),
 	ElementType.SOUL: load('res://assets/Soul.png'),
 	ElementType.MERCURY: load('res://assets/Mercury.png')
 }
@@ -22,31 +26,26 @@ enum ElementType {
 	BODY, SOUL, MERCURY
 }
 
+func _gui_input(event):
+	if event is InputEventMouseButton&&event.is_released():
+		emit_signal('tile_selected', pos)
+
 func _ready():
-	if tile_type == ElementType.AIR:
-		# texture =
-		texture = tile_images[ElementType.AIR]
-		pass
-	elif tile_type == ElementType.WATER:
-		texture = tile_images[ElementType.WATER]
-		pass
-	elif tile_type == ElementType.FIRE:
-		texture = tile_images[ElementType.FIRE]
-		pass
-	elif tile_type == ElementType.EARTH:
-		texture = tile_images[ElementType.EARTH]
-		pass
-	elif tile_type == ElementType.BODY:
-		texture = tile_images[ElementType.BODY]
-		pass
-	elif tile_type == ElementType.SOUL:
-		texture = tile_images[ElementType.SOUL]
-		pass
-	elif tile_type == ElementType.MERCURY:
-		texture = tile_images[ElementType.MERCURY]
-		pass
-	else:
-		texture = load("res://icon.svg")
+	texture = tile_images[tile_type]
+	
 	custom_minimum_size.x = side_length
 	custom_minimum_size.y = side_length
+
+func set_focused(b: bool):
+	print(pos)
+	get_node('f1').visible = b
+	get_node('f2').visible = b
+	get_node('f3').visible = b
+	get_node('f4').visible = b
 	
+func set_pos(new_pos: Vector2):
+	print('old pos')
+	print(pos)
+	pos = new_pos
+	print('new pos')
+	print(pos)
