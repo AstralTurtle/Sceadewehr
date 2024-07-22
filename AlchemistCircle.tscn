@@ -23,6 +23,15 @@ anchor_bottom = 0.641
 offset_top = 0.0239983
 offset_bottom = -0.0240021
 
+[node name="Slot1Texture" type="TextureRect" parent="Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
 [node name="Slot2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -33,5 +42,11 @@ anchor_bottom = 0.641
 offset_top = 0.0239983
 offset_bottom = -0.0240021
 
-[connection signal="button_up" from="Slot1" to="." method="clear_item" binds= [0]]
-[connection signal="button_up" from="Slot2" to="." method="clear_item" binds= [1]]
+[node name="Slot2Texture" type="TextureRect" parent="Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
