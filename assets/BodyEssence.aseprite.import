@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://b4164buhkmj4k"
+path="res://.godot/imported/BodyEssence.aseprite-37df206eeb7b98fbd6483accc6bba6f2.res"
+
+[deps]
+
+source_file="res://assets/BodyEssence.aseprite"
+dest_files=["res://.godot/imported/BodyEssence.aseprite-37df206eeb7b98fbd6483accc6bba6f2.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
