@@ -60,7 +60,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 128.0
 offset_bottom = 128.0
-recipies = Array[Resource("res://src/Recipe.gd")]([])
 
 [node name="ResultBox" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

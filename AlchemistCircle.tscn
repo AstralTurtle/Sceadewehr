@@ -13,7 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rj6li")
 script = ExtResource("2_csryf")
-recipies = null
 
 [node name="Slot1" type="Button" parent="."]
 layout_mode = 1
@@ -38,6 +37,3 @@ offset_left = -8.0
 offset_top = -9.0
 offset_right = 8.0
 offset_bottom = 9.0
-
-[connection signal="button_up" from="Slot1" to="." method="clear_item" binds= [0]]
-[connection signal="button_up" from="Slot2" to="." method="clear_item" binds= [1]]
