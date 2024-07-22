@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://po37y2lacvkn"
+path="res://.godot/imported/SoulEssence.aseprite-2f628f47b547c3114527cfbd1ec85bc6.res"
+
+[deps]
+
+source_file="res://assets/SoulEssence.aseprite"
+dest_files=["res://.godot/imported/SoulEssence.aseprite-2f628f47b547c3114527cfbd1ec85bc6.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

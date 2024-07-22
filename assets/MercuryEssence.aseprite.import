@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://bdsbt1owcs64s"
+path="res://.godot/imported/MercuryEssence.aseprite-d5a908b61af70a4c6bdf26c205d099e6.res"
+
+[deps]
+
+source_file="res://assets/MercuryEssence.aseprite"
+dest_files=["res://.godot/imported/MercuryEssence.aseprite-d5a908b61af70a4c6bdf26c205d099e6.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
