@@ -29,10 +29,11 @@ func on_tile_clicked(pos: Vector2i):
 		print((selected_tile as Vector2).distance_to(pos as Vector2))
 		var selected: Tile = tiles[selected_tile.y][selected_tile.x]
 		var new_selection: Tile = tiles[pos.y][pos.x]
+		var selected_index = selected.get_index()
 		# tween.tween_property(selected, "position", pos, swap_anim_time)
 		# tween.tween_property(new_selection, "position", selected_tile, swap_anim_time)
 		move_child(selected, new_selection.get_index())
-		move_child(new_selection, selected.get_index())
+		move_child(new_selection, selected_index)
 		selected.set_grid_index(pos)
 		new_selection.set_grid_index(selected_tile)
 		tiles[selected_tile.y][selected_tile.x] = new_selection
@@ -54,7 +55,7 @@ func fill_board():
 		var tile: Tile = tile_scene.instantiate()
 		tile.tile_type = tile_type
 		tile.side_length = size.x / 8
-		tile.pos = Vector2i(i % 8, i / 8)
+		tile.grid_index = Vector2i(i % 8, i / 8)
 		tile.connect('tile_selected', on_tile_clicked)
 		tiles[i / 8].append(tile)
 		add_child(tile)
