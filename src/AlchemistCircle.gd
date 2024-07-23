@@ -47,6 +47,7 @@ func clear_item(ind: int):
 func add_item(item: Tile.ElementType):
 	if(holdings.size() >= 2):
 		emit_signal(send_back.get_name(), item)
+		return
 	holdings.append(item)
 	if(holdings.size() == 2):
 		validate_recipe()
