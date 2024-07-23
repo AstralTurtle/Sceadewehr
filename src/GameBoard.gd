@@ -18,12 +18,6 @@ func on_tile_clicked(pos: Vector2i):
 		return
 	print(pos)
 
-	# The tweens
-	var tween = get_tree().create_tween()
-	tween.set_parallel(true)
-	# tween.set_trans(Tween.TRANS_ELASTIC) # Too funny
-	tween.set_trans(Tween.TRANS_EXPO)
-	tween.set_ease(Tween.EASE_OUT)
 
 	if selected_tile == null:
 		selected_tile = pos
@@ -34,9 +28,17 @@ func on_tile_clicked(pos: Vector2i):
 		var new_selection: Tile = tiles[pos.y][pos.x]
 		var selected_index = selected.get_index()
 		var old_selection_pos = selected.position
+
+		# The tweens
+		var tween = get_tree().create_tween()
+		tween.set_parallel(true)
+		# tween.set_trans(Tween.TRANS_ELASTIC) # Too funny
+		tween.set_trans(Tween.TRANS_EXPO)
+		tween.set_ease(Tween.EASE_OUT)
 		tween.tween_property(selected, "position", new_selection.position, swap_anim_time)
 		tween.tween_property(new_selection, "position", old_selection_pos, swap_anim_time)
 		locked = true
+
 		var cleanup = func():
 			move_child(selected, new_selection.get_index())
 			move_child(new_selection, selected_index)
