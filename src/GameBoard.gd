@@ -18,7 +18,6 @@ func on_tile_clicked(pos: Vector2i):
 		return
 	print(pos)
 
-
 	if selected_tile == null:
 		selected_tile = pos
 		tiles[selected_tile.y][selected_tile.x].set_focused(true)
@@ -48,6 +47,8 @@ func on_tile_clicked(pos: Vector2i):
 			tiles[pos.y][pos.x] = selected
 			selected_tile = null
 			locked = false
+			clear_board(tiles)
+
 		selected.set_focused(false)
 		tween.connect("finished", cleanup)
 	else:
@@ -73,3 +74,58 @@ func fill_board():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+func convert_to_flat(arr: Array[Array]):
+	var ret = []
+	for i in range(arr.size()):
+		ret.append_array(arr[i])
+	return ret
+
+func clear_board(board: Array[Array]):
+	clear_horizontal(board)
+	clear_vertical(board)
+
+func clear_horizontal(board: Array[Array]):
+	for y in range(board.size()):
+		var consecutive: Array[Tile] = []
+		var lastType = -1
+		for x in range(board[0].size()):
+			print(y, ' ', x, ' ', lastType)
+			if ((board[y][x] as Tile).tile_type != lastType):
+				if (consecutive.size() >= 3):
+					for t: Tile in consecutive:
+						t.to_clear = true
+						print('index: ', t.grid_index)
+						consecutive = []
+				else:
+					consecutive = []
+			lastType = (board[y][x] as Tile).tile_type
+			consecutive.append(board[y][x] as Tile)
+		if (consecutive.size() >= 3):
+			for t: Tile in consecutive:
+				t.to_clear = true
+
+func clear_vertical(board: Array[Array]):
+	for x in range(board[0].size()):
+		var consecutive: Array[Tile] = []
+		var lastType = -1
+		for y in range(board.size()):
+			print(y, ' ', x, ' ', lastType)
+			if ((board[y][x] as Tile).tile_type != lastType):
+				if (consecutive.size() >= 3):
+					for t: Tile in consecutive:
+						t.to_clear = true
+						print('index: ', t.grid_index)
+						consecutive = []
+				else:
+					consecutive = []
+			lastType = (board[y][x] as Tile).tile_type
+			consecutive.append(board[y][x] as Tile)
+		if (consecutive.size() >= 3):
+			for t: Tile in consecutive:
+				t.to_clear = true
+
+func delete_tiles():
+	for t: Tile in get_children():
+		if (t.to_clear):
+			t.queue_free()

@@ -8,6 +8,10 @@ var grid_index: Vector2i
 
 signal tile_selected(Vector2i)
 
+var to_clear: bool = false
+
+@onready var test: Texture = load('res://icon.svg')
+
 # set in editor
 @export var tile_images = {
 	ElementType.AIR: load('res://assets/Air.png'),
@@ -16,17 +20,21 @@ signal tile_selected(Vector2i)
 	ElementType.EARTH: load('res://assets/Earth.png'),
 	ElementType.BODY: load('res://assets/Body.png'),
 	ElementType.SOUL: load('res://assets/Soul.png'),
-	ElementType.MERCURY: load('res://assets/Mercury.png')
+	ElementType.MERCURY: load('res://assets/Mercury.png'),
+	ElementType.DISABLED: test
 }
 
 enum ElementType {
 	# The elements
 	AIR, WATER, FIRE, EARTH,
 	# The primes
-	BODY, SOUL, MERCURY
+	BODY, SOUL, MERCURY, DISABLED
 }
 
 func _gui_input(event):
+	if (to_clear):
+		texture = test
+
 	if event is InputEventMouseButton&&event.is_released():
 		emit_signal('tile_selected', grid_index)
 
