@@ -57,3 +57,11 @@ func set_grid_index(new_index: Vector2i):
 	grid_index = new_index
 	print('new grid_index')
 	print(grid_index)
+
+func scramble():
+	var new_type: ElementType = tile_type
+	while tile_type == new_type:
+		new_type = randi_range(0, 6) as ElementType
+	tile_type = new_type
+	texture = tile_images[tile_type]
+	print("from " + ElementType.keys()[tile_type] + " to " + ElementType.keys()[new_type])

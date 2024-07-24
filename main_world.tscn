@@ -44,7 +44,6 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 8
 script = ExtResource("2_wvq78")
-swap_anim_time = null
 
 [node name="PlayerUi2" parent="HBoxContainer" instance=ExtResource("1_c4g6l")]
 layout_mode = 2
