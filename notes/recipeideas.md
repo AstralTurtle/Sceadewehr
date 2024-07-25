@@ -1,12 +1,13 @@
 # Quick Reference:
-Air -> Move
+Air -> Move/Speed
 Earth -> Stall
 Fire -> Damage 
 Water ->  Defense
----
 Soul (Combustibility) -> AOE
 Spirit (Fusibility/Volatility) -> Board Alteration/Meta/Crafting idk
 Body (Stability) -> Traps/Clones
+
+---
 
 Keywords are capitalized, and explained for their element.
 ### General Keywords:
