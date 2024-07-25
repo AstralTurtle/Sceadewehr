@@ -1,4 +1,5 @@
 extends GridContainer
+class_name GameBoard
 
 @export var swap_anim_time: float = 0.5
 var tiles: Array[Array]
@@ -11,7 +12,6 @@ var selected_tile = null
 func _ready():
 	setup()
 	fill_board()
-	pass
 
 func on_tile_clicked(pos: Vector2i):
 	if locked:
