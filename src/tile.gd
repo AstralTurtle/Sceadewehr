@@ -64,4 +64,3 @@ func scramble():
 		new_type = randi_range(0, 6) as ElementType
 	tile_type = new_type
 	texture = tile_images[tile_type]
-	print("from " + ElementType.keys()[tile_type] + " to " + ElementType.keys()[new_type])

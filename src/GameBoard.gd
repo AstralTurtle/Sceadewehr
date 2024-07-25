@@ -131,34 +131,54 @@ func delete_tiles():
 			t.queue_free()
 
 func delete_tile(idx: Vector2i):
-	var moved_tiles: Array[Tile] = []
-	var moved_tiles_old_pos: Array[Vector2] = []
-	var moved_tiles_pos: Array[Vector2] = []
-	var r = idx.y
+	locked = true
+	# Tween
+	var tween: Tween = get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_EXPO)
+	tween.set_ease(Tween.EASE_OUT)
+	
+	# Tile to be re_made
+	var r = 0
+	var dead_one: Tile = tiles[idx.y][idx.x]
+	var top_pos: Vector2 = tiles[0][idx.x].position
+	
+	# Loop it
+	while r < idx.y:
+		var current: Tile = tiles[r][idx.x]
+		var bellow: Tile = tiles[r+1][idx.x]
+		# Fix the position
+		tween.tween_property(current, "position", bellow.position, swap_anim_time)
+		r += 1;
+	dead_one.scramble()
+	dead_one.position = top_pos
+	dead_one.position.y -= 300
+	tween.tween_property(dead_one, "position", top_pos, swap_anim_time+0.5)
+	await tween.finished
+	
+	r = idx.y
 	while r > 0:
 		r -= 1
 		var current: Tile = tiles[r][idx.x]
-		var old: Tile = tiles[r+1][idx.x]
-		var swap_idx = current.get_index()
-		# tween.tween_property(current, "position", old.position, swap_anim_time)
-		moved_tiles.append(current)
-		moved_tiles_pos.append(old.position)
-		moved_tiles_old_pos.append(current.position)
-		old.position = current.position
-		move_child(current, old.get_index())
-		move_child(old, swap_idx)
+		var bellow: Tile = tiles[r+1][idx.x]
+		tiles[r][idx.x] = bellow
+		bellow.grid_index = Vector2(idx.x, r)
 		tiles[r+1][idx.x] = current
-		current.grid_index = Vector2i(idx.x, r+1)
-		tiles[r][idx.x] = old
-		old.grid_index = Vector2i(idx.x, r)
-	tiles[0][idx.x].scramble()
+		current.grid_index = Vector2(idx.x, r+1)
+		var bellow_idx = bellow.get_index()
+		move_child(bellow, current.get_index())
+		move_child(current, bellow_idx)
+	locked = false
+		
 
-	# var tween = get_tree().create_tween()
-	# tween.set_parallel(true)
-	for i in range(moved_tiles.size()):
-		moved_tiles[i].position = moved_tiles_old_pos[i]
-		# tween.tween_property(moved_tiles[i], "position", moved_tiles_pos[i], swap_anim_time)
-		moved_tiles[i].position = moved_tiles_pos[i]
-	# var new_start = tiles[0][idx.x].position
-	# tiles[0][idx.x].position.y -= 100
-	# tween.chain().tween_property(tiles[0][idx.x], "position", new_start, swap_anim_time)
+
+	
+func tween_tile_hack(tile: Tile, global_pos: Vector2, final_pos: Vector2, tween: Tween):
+	var fake_tile = Tile.new()
+	fake_tile.tile_type = tile.tile_type
+	fake_tile.side_length = tile.side_length
+	get_parent().add_child(fake_tile)
+	tween.connect("finished", func(): fake_tile.queue_free())
+	fake_tile.global_position = global_pos
+	tween.tween_property(fake_tile, "global_position", final_pos, swap_anim_time)
+
