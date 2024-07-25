@@ -1,4 +1,5 @@
 extends Node2D
+class_name CloneBoard
 
 @export var perside_creation: int = 5
 @onready var shadow_clone: PackedScene = load("res://shadow_clone.tscn")
@@ -10,7 +11,6 @@ func _ready():
 		clone.global_position = get_random_pos()
 		clone.grid_interval = game_board.size.x/game_board.columns
 		add_child(clone)
-		game_board.turn_complete.connect(clone.move_forward)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

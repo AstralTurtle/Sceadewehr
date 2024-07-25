@@ -1,4 +1,5 @@
 extends Control
+class_name PlayerUI
 
 @export var player_name: String = ""
 @onready var name_label: Label = get_node("MarginContainer/HBoxContainer/VBoxContainer/NameLabel")
