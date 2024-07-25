@@ -48,7 +48,7 @@ func on_tile_clicked(pos: Vector2i):
 			tiles[pos.y][pos.x] = selected
 			selected_tile = null
 			locked = false
-			clear_board(tiles)
+			await clear_board(tiles)
 
 		selected.set_focused(false)
 		tween.connect("finished", cleanup)
@@ -85,7 +85,10 @@ func convert_to_flat(arr: Array[Array]):
 func clear_board(board: Array[Array]):
 	clear_horizontal(board)
 	clear_vertical(board)
-	delete_tiles()
+	await delete_tiles()
+	if (!clean_board()):
+		return await clear_board(board)
+	return true
 
 func clear_horizontal(board: Array[Array]):
 	for y in range(board.size()):
@@ -132,6 +135,13 @@ func delete_tiles():
 		if (t.to_clear):
 			await delete_tile(t.grid_index)
 
+func clean_board():
+	var clean: bool = true
+	for t: Tile in get_children():
+		if (t.to_clear):
+			clean = false
+			t.to_clear = false
+	return clean
 func delete_tile(idx: Vector2i):
 	locked = true
 	# Tween

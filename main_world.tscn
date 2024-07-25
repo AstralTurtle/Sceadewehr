@@ -45,6 +45,8 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 8
 script = ExtResource("2_wvq78")
+swap_anim_time = null
+clear_anim_time = 0.01
 
 [node name="CloneBoard" type="Node2D" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
 script = ExtResource("3_uxvh6")
