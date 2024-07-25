@@ -13,7 +13,7 @@ var to_clear: bool = false
 @onready var test: Texture = load('res://icon.svg')
 
 # set in editor
-@export var tile_images = {
+@export static var tile_images = {
 	ElementType.AIR: load('res://assets/Air.png'),
 	ElementType.WATER: load('res://assets/Water.png'),
 	ElementType.FIRE: load('res://assets/Fire.png'),
@@ -32,9 +32,6 @@ enum ElementType {
 }
 
 func _gui_input(event):
-	if (to_clear):
-		texture = test
-
 	if event is InputEventMouseButton&&event.is_released():
 		emit_signal('tile_selected', grid_index)
 
@@ -63,4 +60,5 @@ func scramble():
 	while tile_type == new_type:
 		new_type = randi_range(0, 6) as ElementType
 	tile_type = new_type
+	if (tile)
 	texture = tile_images[tile_type]
