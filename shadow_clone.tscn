@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://my71hwmt3iqq"]
+[gd_scene load_steps=3 format=3 uid="uid://my71hwmt3iqq"]
 
 [ext_resource type="Texture2D" uid="uid://mka84kumacyk" path="res://icon.svg" id="1_i1oee"]
+[ext_resource type="Script" path="res://src/ShadowClone.gd" id="2_squqw"]
 
-[node name="Sprite2D" type="Sprite2D"]
+[node name="ShadowClone" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.305882)
 position = Vector2(-3.8147e-06, -2)
 scale = Vector2(0.373, 0.373)
 texture = ExtResource("1_i1oee")
+script = ExtResource("2_squqw")
