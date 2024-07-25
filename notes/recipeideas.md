@@ -1,11 +1,11 @@
 # Quick Reference:
-Air -> Move/Speed
-Earth -> Stall
-Fire -> Damage 
-Water ->  Defense
-Soul (Combustibility) -> AOE
-Spirit (Fusibility/Volatility) -> Board Alteration/Meta/Crafting idk
-Body (Stability) -> Traps/Clones
+- Air -> Move/Speed
+- Earth -> Stall
+- Fire -> Damage 
+- Water ->  Defense
+- Soul (Combustibility) -> AOE
+- Spirit (Fusibility/Volatility) -> Board Alteration/Meta/Crafting idk
+- Body (Stability) -> Traps/Clones
 
 ---
 
