@@ -32,9 +32,6 @@ enum ElementType {
 }
 
 func _gui_input(event):
-	if (to_clear):
-		texture = test
-
 	if event is InputEventMouseButton&&event.is_released():
 		emit_signal('tile_selected', grid_index)
 
