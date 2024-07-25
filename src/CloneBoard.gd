@@ -5,9 +5,11 @@ extends Node2D
 
 func _ready():
 	for i in range(10):
-		var clone: Sprite2D = shadow_clone.instantiate()
+		var clone: ShadowClone = shadow_clone.instantiate()
 		clone.global_position = get_random_pos()
+		clone.grid_interval = game_board.size.x/game_board.columns
 		add_child(clone)
+		game_board.turn_complete.connect(clone.move_forward)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,5 +17,5 @@ func _ready():
 # 	pass
 
 func get_random_pos() -> Vector2:
-	var incr_by: float = game_board.size.x/8
+	var incr_by: float = game_board.size.x/game_board.columns
 	return Vector2(incr_by*randi_range(0,7)+incr_by/2, incr_by*randi_range(0,7)+incr_by/2)

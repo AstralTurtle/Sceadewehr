@@ -9,6 +9,8 @@ var locked: bool = false
 
 var selected_tile = null
 
+signal turn_complete()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setup()
@@ -49,6 +51,7 @@ func on_tile_clicked(pos: Vector2i):
 			selected_tile = null
 			locked = false
 			await clear_board(tiles)
+			emit_signal(turn_complete.get_name())
 
 		selected.set_focused(false)
 		tween.connect("finished", cleanup)
