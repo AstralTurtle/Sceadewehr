@@ -1,10 +1,11 @@
 extends Node2D
 
+@export var perside_creation: int = 5
 @onready var shadow_clone: PackedScene = load("res://shadow_clone.tscn")
 @onready var game_board: GameBoard = get_node("../GameBoard")
 
 func _ready():
-	for i in range(10):
+	for i in range(perside_creation*2):
 		var clone: ShadowClone = shadow_clone.instantiate()
 		clone.global_position = get_random_pos()
 		clone.grid_interval = game_board.size.x/game_board.columns
