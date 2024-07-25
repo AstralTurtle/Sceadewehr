@@ -2,6 +2,7 @@ extends GridContainer
 class_name GameBoard
 
 @export var swap_anim_time: float = 0.5
+@export var clear_anim_time: float = 0.1
 var tiles: Array[Array]
 var tile_scene: PackedScene = load("res://Tile.tscn")
 var locked: bool = false
@@ -84,6 +85,7 @@ func convert_to_flat(arr: Array[Array]):
 func clear_board(board: Array[Array]):
 	clear_horizontal(board)
 	clear_vertical(board)
+	delete_tiles()
 
 func clear_horizontal(board: Array[Array]):
 	for y in range(board.size()):
@@ -128,7 +130,7 @@ func clear_vertical(board: Array[Array]):
 func delete_tiles():
 	for t: Tile in get_children():
 		if (t.to_clear):
-			t.queue_free()
+			await delete_tile(t.grid_index)
 
 func delete_tile(idx: Vector2i):
 	locked = true
@@ -146,32 +148,29 @@ func delete_tile(idx: Vector2i):
 	# Loop it
 	while r < idx.y:
 		var current: Tile = tiles[r][idx.x]
-		var bellow: Tile = tiles[r+1][idx.x]
+		var bellow: Tile = tiles[r + 1][idx.x]
 		# Fix the position
-		tween.tween_property(current, "position", bellow.position, swap_anim_time)
+		tween.tween_property(current, "position", bellow.position, clear_anim_time)
 		r += 1;
 	dead_one.scramble()
 	dead_one.position = top_pos
 	dead_one.position.y -= 300
-	tween.tween_property(dead_one, "position", top_pos, swap_anim_time+0.5)
+	tween.tween_property(dead_one, "position", top_pos, clear_anim_time)
 	await tween.finished
 	
 	r = idx.y
 	while r > 0:
 		r -= 1
 		var current: Tile = tiles[r][idx.x]
-		var bellow: Tile = tiles[r+1][idx.x]
+		var bellow: Tile = tiles[r + 1][idx.x]
 		tiles[r][idx.x] = bellow
 		bellow.grid_index = Vector2(idx.x, r)
-		tiles[r+1][idx.x] = current
-		current.grid_index = Vector2(idx.x, r+1)
+		tiles[r + 1][idx.x] = current
+		current.grid_index = Vector2(idx.x, r + 1)
 		var bellow_idx = bellow.get_index()
 		move_child(bellow, current.get_index())
 		move_child(current, bellow_idx)
 	locked = false
-		
-
-
 	
 func tween_tile_hack(tile: Tile, global_pos: Vector2, final_pos: Vector2, tween: Tween):
 	var fake_tile = Tile.new()
@@ -181,4 +180,3 @@ func tween_tile_hack(tile: Tile, global_pos: Vector2, final_pos: Vector2, tween:
 	tween.connect("finished", func(): fake_tile.queue_free())
 	fake_tile.global_position = global_pos
 	tween.tween_property(fake_tile, "global_position", final_pos, swap_anim_time)
-
