@@ -21,6 +21,8 @@ signal turn_complete()
 
 func _ready():
 	name_label.text = player_name
+	var old_settings = name_label.label_settings
+	name_label.label_settings = old_settings.duplicate()
 	alchemist_crafter.send_back.connect(add_essence)
 	alchemist_crafter.crafted_item.connect(finish)
 	add_essence(Tile.ElementType.AIR)

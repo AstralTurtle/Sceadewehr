@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/player_ui.gd" id="1_ydabh"]
 [ext_resource type="PackedScene" uid="uid://dhm3gg86ro6vg" path="res://AlchemistCircle.tscn" id="2_bqdh4"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_uhltx"]
+[sub_resource type="LabelSettings" id="LabelSettings_8d6ff"]
 font_size = 35
 font_color = Color(1.1, 1.1, 1.1, 1)
 
@@ -40,7 +40,7 @@ theme_override_constants/v_separation = 25
 [node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Player"
-label_settings = SubResource("LabelSettings_uhltx")
+label_settings = SubResource("LabelSettings_8d6ff")
 horizontal_alignment = 1
 
 [node name="Inventory" type="FlowContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]

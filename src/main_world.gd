@@ -11,7 +11,9 @@ func _ready():
     game_board.swap_complete.connect(continue_turn)
     var ing = game_board.dump_ingridients()
     player1.essence_list.append_array(ing)
+    player1.set_active(true)
     player2.essence_list.append_array(ing)
+    player2.set_active(false)
 
 func continue_turn():
     var ingridients = game_board.dump_ingridients()
