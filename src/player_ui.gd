@@ -16,7 +16,6 @@ var essence_images = {
 	Tile.ElementType.MERCURY: load('res://assets/Mercury.png')
 }
 var essence_list: Array[Tile.ElementType]
-var active: bool = true
 
 signal turn_complete()
 
@@ -28,12 +27,12 @@ func _ready():
 	add_essence(Tile.ElementType.AIR)
 	add_essence(Tile.ElementType.AIR)
 
-func toggle_active():
-	active = !active
-	if (active):
+func set_active(is_active: bool):
+	print(player_name + (" is" if is_active else " isn't") + " active")
+	if (is_active):
 		name_label.label_settings.font_color = Color(1.1, 1.1, 1.1, 1.1)
 	else:
-		name_label.label_settings.font_color = Color(1, 1, 1, 0.8)
+		name_label.label_settings.font_color = Color(1, 1, 1, 0.5)
 
 func send_ingridient(button: TextureButton, essence: Tile.ElementType):
 	alchemist_crafter.add_item(essence)

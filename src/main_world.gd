@@ -4,6 +4,7 @@ extends Control
 @onready var player2: PlayerUI = $HBoxContainer/PlayerUi2
 @onready var game_board: GameBoard = $HBoxContainer/AspectRatioContainer/ColorRect/GameBoard
 @onready var shadow_clones: CloneBoard = $HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard
+@onready var hover_mat: ShaderMaterial = load("res://assets/hover.material")
 var player1_active: bool = true
 
 func _ready():
@@ -18,7 +19,13 @@ func continue_turn():
     if not player1_active:
         active = player2
     active.essence_list.append_array(ingridients)
-    await active.turn_complete
+    # await active.turn_complete
     
     # Switch turn
     player1_active = !player1_active
+    player1.set_active(player1_active)
+    player2.set_active(!player1_active)
+    
+func _process(_delta):
+    hover_mat.set_shader_parameter("mouse_pos", game_board.get_local_mouse_position())
+    print(game_board.get_local_mouse_position())

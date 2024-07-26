@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4gjlpymyavyj"]
+[gd_scene load_steps=6 format=3 uid="uid://c4gjlpymyavyj"]
 
 [ext_resource type="PackedScene" uid="uid://cppqvlypbi5wh" path="res://player_ui.tscn" id="1_c4g6l"]
 [ext_resource type="Script" path="res://src/main_world.gd" id="1_kop2j"]
 [ext_resource type="Script" path="res://src/GameBoard.gd" id="2_wvq78"]
+[ext_resource type="Material" uid="uid://dvgxvna08ep0b" path="res://assets/hover.material" id="3_marsv"]
 [ext_resource type="Script" path="res://src/CloneBoard.gd" id="3_uxvh6"]
 
 [node name="MainWorld" type="Control"]
@@ -33,12 +34,14 @@ player_name = "Player 1"
 layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer"]
+material = ExtResource("3_marsv")
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
 [node name="GameBoard" type="GridContainer" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
