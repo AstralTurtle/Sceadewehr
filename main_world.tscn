@@ -35,17 +35,15 @@ layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer"]
 material = ExtResource("3_marsv")
-custom_minimum_size = Vector2(600, 0)
+custom_minimum_size = Vector2(628, 0)
 layout_mode = 2
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
 [node name="GameBoard" type="GridContainer" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+custom_minimum_size = Vector2(628, 628)
+offset_right = 628.0
+offset_bottom = 628.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 8

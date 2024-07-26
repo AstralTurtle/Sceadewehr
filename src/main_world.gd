@@ -19,7 +19,9 @@ func continue_turn():
     if not player1_active:
         active = player2
     active.essence_list.append_array(ingridients)
+    hover_mat.set_shader_parameter("show", true)
     # await active.turn_complete
+    hover_mat.set_shader_parameter("show", false)
     
     # Switch turn
     player1_active = !player1_active
@@ -28,4 +30,3 @@ func continue_turn():
     
 func _process(_delta):
     hover_mat.set_shader_parameter("mouse_pos", game_board.get_local_mouse_position())
-    print(game_board.get_local_mouse_position())
