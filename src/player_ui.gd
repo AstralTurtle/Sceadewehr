@@ -2,6 +2,7 @@ extends Control
 class_name PlayerUI
 
 @export var player_name: String = ""
+@export var health = 10
 @onready var name_label: Label = get_node("MarginContainer/HBoxContainer/VBoxContainer/NameLabel")
 @onready var inventory: FlowContainer = get_node("MarginContainer/HBoxContainer/VBoxContainer/Inventory")
 @onready var alchemist_crafter: AlchemistCircle = get_node("MarginContainer/HBoxContainer/VBoxContainer/Control/AlchemistCircle")
@@ -11,7 +12,7 @@ var essence_images = {
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
 	Tile.ElementType.FIRE: load('res://assets/FireEssence.png'),
 	Tile.ElementType.EARTH: load('res://assets/EarthEssence.png'),
-	Tile.ElementType.BODY:  load('res://assets/Body.png'),
+	Tile.ElementType.BODY: load('res://assets/Body.png'),
 	Tile.ElementType.SOUL: load('res://assets/Soul.png'),
 	Tile.ElementType.MERCURY: load('res://assets/Mercury.png')
 }
