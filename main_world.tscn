@@ -42,12 +42,14 @@ color = Color(1, 1, 1, 0)
 
 [node name="GameBoard" type="GridContainer" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
 custom_minimum_size = Vector2(628, 628)
+layout_mode = 0
 offset_right = 628.0
 offset_bottom = 628.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 8
 script = ExtResource("2_wvq78")
+clear_anim_time = 0.05
 
 [node name="CloneBoard" type="Node2D" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
 script = ExtResource("3_uxvh6")

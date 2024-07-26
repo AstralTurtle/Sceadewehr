@@ -60,4 +60,5 @@ func scramble():
 	while tile_type == new_type:
 		new_type = randi_range(0, 6) as ElementType
 	tile_type = new_type
+	# if (tile)
 	texture = tile_images[tile_type]
