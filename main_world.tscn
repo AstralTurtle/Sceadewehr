@@ -34,10 +34,8 @@ player_name = "Player 1"
 layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer"]
-material = ExtResource("3_marsv")
 custom_minimum_size = Vector2(628, 0)
 layout_mode = 2
-mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
 [node name="GameBoard" type="GridContainer" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
@@ -53,6 +51,15 @@ clear_anim_time = 0.05
 
 [node name="CloneBoard" type="Node2D" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
 script = ExtResource("3_uxvh6")
+
+[node name="FunnyRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
+material = ExtResource("3_marsv")
+custom_minimum_size = Vector2(628, 0)
+layout_mode = 2
+offset_right = 628.0
+offset_bottom = 628.0
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
 
 [node name="PlayerUi2" parent="HBoxContainer" instance=ExtResource("1_c4g6l")]
 layout_mode = 2
