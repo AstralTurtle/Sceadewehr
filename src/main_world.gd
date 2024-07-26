@@ -24,6 +24,8 @@ func continue_turn():
     hover_mat.set_shader_parameter("show", true)
     # await active.turn_complete
     hover_mat.set_shader_parameter("show", false)
+    for item in get_tree().get_nodes_in_group(BaseItem.group_name):
+        item.check_prerequisite()
     
     # Switch turn
     player1_active = !player1_active

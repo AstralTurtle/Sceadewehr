@@ -65,4 +65,4 @@ func visualize():
 		slot2_texture.texture = null
 
 func craft():
-	crafted_item.emit(null)
+	crafted_item.emit(held_recipe.item_scene)

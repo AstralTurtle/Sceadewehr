@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcvo45plmn1nu"]
+
+[ext_resource type="Script" path="res://items/base_item.gd" id="1_1ftux"]
+
+[node name="TestItem" type="Node2D"]
+script = ExtResource("1_1ftux")
+item_name = "test_item"
+placeable = 0

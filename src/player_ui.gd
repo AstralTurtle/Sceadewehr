@@ -48,7 +48,16 @@ func add_essence(essence: Tile.ElementType):
 	essence_rect.connect("button_up", send_recipe)
 	inventory.add_child(essence_rect)
 	
-func finish(item):
-	if item != null:
+func finish(item_scene: PackedScene):
+	var item: BaseItem = item_scene.instantiate()
+	# Add item somewhere on scene tree, based of placebility
+	if item.placeable == BaseItem.Placability.NotPlaceable:
+		get_tree().root.add_child(item)
+	elif item.placeable == BaseItem.Placability.OnTile:
 		pass
+	elif item.placeable == BaseItem.Placability.OnShadow:
+		pass
+	turn_complete.emit()
+
+func skip():
 	turn_complete.emit()

@@ -2,6 +2,7 @@ extends Resource
 class_name Recipe
 
 @export var ingridients: Array[Tile.ElementType]
+@export var item_scene: PackedScene
 # @export var result: Result type not defined yet
 
 func is_valid(proposed: Array[Tile.ElementType]) -> bool:
