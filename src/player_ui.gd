@@ -18,9 +18,12 @@ var essence_images = {
 var essence_list: Array[Tile.ElementType]
 var active: bool = true
 
+signal turn_complete()
+
 func _ready():
 	name_label.text = player_name
-	alchemist_crafter.connect("send_back", add_essence)
+	alchemist_crafter.send_back.connect(add_essence)
+	alchemist_crafter.crafted_item.connect(finish)
 	add_essence(Tile.ElementType.AIR)
 	add_essence(Tile.ElementType.AIR)
 	add_essence(Tile.ElementType.AIR)
@@ -44,3 +47,7 @@ func add_essence(essence: Tile.ElementType):
 	essence_rect.connect("button_up", send_recipe)
 	inventory.add_child(essence_rect)
 	
+func finish(item):
+	if item != null:
+		pass
+	turn_complete.emit()

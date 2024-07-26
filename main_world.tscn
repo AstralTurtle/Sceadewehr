@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4gjlpymyavyj"]
+[gd_scene load_steps=5 format=3 uid="uid://c4gjlpymyavyj"]
 
 [ext_resource type="PackedScene" uid="uid://cppqvlypbi5wh" path="res://player_ui.tscn" id="1_c4g6l"]
+[ext_resource type="Script" path="res://src/main_world.gd" id="1_kop2j"]
 [ext_resource type="Script" path="res://src/GameBoard.gd" id="2_wvq78"]
 [ext_resource type="Script" path="res://src/CloneBoard.gd" id="3_uxvh6"]
 
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_kop2j")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

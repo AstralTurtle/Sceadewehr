@@ -7,11 +7,18 @@ extends Control
 var player1_active: bool = true
 
 func _ready():
-    game_board.turn_complete.connect(turn_complete)
+    game_board.swap_complete.connect(continue_turn)
+    var ing = game_board.dump_ingridients()
+    player1.essence_list.append_array(ing)
+    player2.essence_list.append_array(ing)
 
-func turn_complete():
-    if player1_active:
-        pass
-    else:
-        pass
+func continue_turn():
+    var ingridients = game_board.dump_ingridients()
+    var active: PlayerUI = player1
+    if not player1_active:
+        active = player2
+    active.essence_list.append_array(ingridients)
+    await active.turn_complete
+    
+    # Switch turn
     player1_active = !player1_active

@@ -5,11 +5,12 @@ class_name GameBoard
 @export var clear_anim_time: float = 0.1
 var tiles: Array[Array]
 var tile_scene: PackedScene = load("res://Tile.tscn")
+var ingridients: Array[Tile.ElementType] = []
 var locked: bool = false
 
 var selected_tile = null
 
-signal turn_complete()
+signal swap_complete()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,7 +52,7 @@ func on_tile_clicked(pos: Vector2i):
 			selected_tile = null
 			locked = false
 			await clear_board(tiles)
-			emit_signal(turn_complete.get_name())
+			emit_signal(swap_complete.get_name())
 
 		selected.set_focused(false)
 		tween.connect("finished", cleanup)
@@ -185,11 +186,7 @@ func delete_tile(idx: Vector2i):
 		move_child(current, bellow_idx)
 	locked = false
 	
-func tween_tile_hack(tile: Tile, global_pos: Vector2, final_pos: Vector2, tween: Tween):
-	var fake_tile = Tile.new()
-	fake_tile.tile_type = tile.tile_type
-	fake_tile.side_length = tile.side_length
-	get_parent().add_child(fake_tile)
-	tween.connect("finished", func(): fake_tile.queue_free())
-	fake_tile.global_position = global_pos
-	tween.tween_property(fake_tile, "global_position", final_pos, swap_anim_time)
+func dump_ingridients() -> Array[Tile.ElementType]:
+	var ing = ingridients
+	ingridients.clear()
+	return ing

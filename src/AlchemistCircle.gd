@@ -20,6 +20,7 @@ var essence_images = {
 }
 
 signal send_back(item: Tile.ElementType)
+signal crafted_item(item)
 
 func _ready():
 	pass
@@ -62,3 +63,6 @@ func visualize():
 		slot2_texture.texture = essence_images.get(holdings[1])
 	else:
 		slot2_texture.texture = null
+
+func craft():
+	crafted_item.emit(null)
