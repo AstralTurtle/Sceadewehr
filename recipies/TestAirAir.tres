@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=3 format=3 uid="uid://cnv8r4t5o0rlw"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://cnv8r4t5o0rlw"]
 
-[ext_resource type="PackedScene" uid="uid://dcvo45plmn1nu" path="res://items/test_item.tscn" id="1_5ro8d"]
 [ext_resource type="Script" path="res://src/Recipe.gd" id="2_k6765"]
 
 [resource]
 script = ExtResource("2_k6765")
 ingridients = Array[int]([0, 0])
-item = ExtResource("1_5ro8d")

@@ -25,7 +25,7 @@ func on_tile_clicked(pos: Vector2i):
 	if selected_tile == null:
 		selected_tile = pos
 		tiles[selected_tile.y][selected_tile.x].set_focused(true)
-	elif (selected_tile as Vector2).distance_to(pos as Vector2) < 1.5:
+	elif (selected_tile as Vector2).distance_to(pos as Vector2) < 1.5 and (selected_tile as Vector2).distance_to(pos as Vector2)>0:
 		print((selected_tile as Vector2).distance_to(pos as Vector2))
 		var selected: Tile = tiles[selected_tile.y][selected_tile.x]
 		var new_selection: Tile = tiles[pos.y][pos.x]
