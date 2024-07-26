@@ -31,6 +31,7 @@ Spirit + Spirit - Pure Essence - Wildcard/Give's player a different essence.
 
 Soul + Soul - Unstable Concoction - Deal 1 damage to both players
 
+
 ### Air:
 Air + Water - Tsunami - Push enemy shadow clones in the front/bottom half of the board back 2
 
@@ -39,6 +40,7 @@ Air + Body (Rune) - Push target back 2 squares
 Air + Soul - Burst - Choose a 3x3 area, ALL clones in the area are pushed away from the center
 
 Air +  Spirit - Hasten - Repeat your turn || Gain a second Alchemy circle next round || gain double essences when you clear next turn
+
 
 ### Water:
 Damp. A damp clone deals half damage.
@@ -50,6 +52,7 @@ Water + Body -  Surf Board (Rune) - target is Damp
 Water + Soul - Dampen - make a 3x3 square of clones Dmp
 
 Water + Spirit - Fog Cloud - Hide a 2x2 square of tile TEXTURES
+
 
 ### Earth:
 Earth + Spirit - Philospher's Stone - Transmute a 3x3 area of tiles into random tiles
