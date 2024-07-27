@@ -24,16 +24,16 @@ func continue_turn():
         active = player2
     for i in ingridients:
         active.add_essence(i)
-    hover_mat.set_shader_parameter("show", true)
-    # await active.turn_complete
-    hover_mat.set_shader_parameter("show", false)
-    for item in get_tree().get_nodes_in_group(BaseItem.group_name):
-        item.check_prerequisite()
+    await active.turn_complete
+    print("hello")
+    # hover_mat.set_shader_parameter("show", true)
+    # hover_mat.set_shader_parameter("show", false)
     
     # Switch turn
     player1_active = !player1_active
     player1.set_active(player1_active)
     player2.set_active(!player1_active)
+    game_board.locked = false
     
 func _process(_delta):
     hover_mat.set_shader_parameter("mouse_pos", game_board.get_local_mouse_position())
