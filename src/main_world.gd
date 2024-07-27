@@ -22,7 +22,8 @@ func continue_turn():
     var active: PlayerUI = player1
     if not player1_active:
         active = player2
-    active.essence_list.append_array(ingridients)
+    for i in ingridients:
+        active.add_essence(i)
     hover_mat.set_shader_parameter("show", true)
     # await active.turn_complete
     hover_mat.set_shader_parameter("show", false)

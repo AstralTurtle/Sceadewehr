@@ -99,18 +99,22 @@ func clear_horizontal(board: Array[Array]):
 		var consecutive: Array[Tile] = []
 		var lastType = -1
 		for x in range(board[0].size()):
-			print(y, ' ', x, ' ', lastType)
+			# print(y, ' ', x, ' ', lastType)
 			if ((board[y][x] as Tile).tile_type != lastType):
 				if (consecutive.size() >= 3):
+					for i in range(consecutive.size()-2):
+						ingridients.append(consecutive[0].tile_type)
 					for t: Tile in consecutive:
 						t.to_clear = true
-						print('index: ', t.grid_index)
+						# print('index: ', t.grid_index)
 						consecutive = []
 				else:
 					consecutive = []
 			lastType = (board[y][x] as Tile).tile_type
 			consecutive.append(board[y][x] as Tile)
 		if (consecutive.size() >= 3):
+			for i in range(consecutive.size()-2):
+				ingridients.append(consecutive[0].tile_type)
 			for t: Tile in consecutive:
 				t.to_clear = true
 
@@ -119,18 +123,22 @@ func clear_vertical(board: Array[Array]):
 		var consecutive: Array[Tile] = []
 		var lastType = -1
 		for y in range(board.size()):
-			print(y, ' ', x, ' ', lastType)
+			# print(y, ' ', x, ' ', lastType)
 			if ((board[y][x] as Tile).tile_type != lastType):
 				if (consecutive.size() >= 3):
+					for i in range(consecutive.size()-2):
+						ingridients.append(consecutive[0].tile_type)
 					for t: Tile in consecutive:
 						t.to_clear = true
-						print('index: ', t.grid_index)
+						# print('index: ', t.grid_index)
 						consecutive = []
 				else:
 					consecutive = []
 			lastType = (board[y][x] as Tile).tile_type
 			consecutive.append(board[y][x] as Tile)
 		if (consecutive.size() >= 3):
+			for i in range(consecutive.size()-2):
+				ingridients.append(consecutive[0].tile_type)
 			for t: Tile in consecutive:
 				t.to_clear = true
 
@@ -187,6 +195,6 @@ func delete_tile(idx: Vector2i):
 	locked = false
 	
 func dump_ingridients() -> Array[Tile.ElementType]:
-	var ing = ingridients
+	var ing = ingridients.duplicate()
 	ingridients.clear()
 	return ing

@@ -31,7 +31,6 @@ func _ready():
 	add_essence(Tile.ElementType.AIR)
 
 func set_active(is_active: bool):
-	print(player_name + (" is" if is_active else " isn't") + " active")
 	if (is_active):
 		name_label.label_settings.font_color = Color(1.1, 1.1, 1.1, 1.1)
 	else:
