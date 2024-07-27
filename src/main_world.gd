@@ -1,4 +1,5 @@
 extends Control
+class_name MainWorld
 
 @onready var player1: PlayerUI = $HBoxContainer/PlayerUi
 @onready var player2: PlayerUI = $HBoxContainer/PlayerUi2
@@ -9,6 +10,7 @@ var player1_active: bool = true
 
 func _ready():
     game_board.swap_complete.connect(continue_turn)
+    shadow_clones.do_damage.connect(process_damage)
     var ing = game_board.dump_ingridients()
     player1.essence_list.append_array(ing)
     player1.set_active(true)
@@ -34,3 +36,9 @@ func continue_turn():
     
 func _process(_delta):
     hover_mat.set_shader_parameter("mouse_pos", game_board.get_local_mouse_position())
+    
+func process_damage(damage: int, team: int):
+    if team == 0:
+        player1.health -= damage
+    elif team == 1:
+        player2.health -= damage
