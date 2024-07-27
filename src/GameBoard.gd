@@ -50,7 +50,6 @@ func on_tile_clicked(pos: Vector2i):
 			tiles[selected_tile.y][selected_tile.x] = new_selection
 			tiles[pos.y][pos.x] = selected
 			selected_tile = null
-			locked = false
 			await clear_board(tiles)
 			emit_signal(swap_complete.get_name())
 
@@ -155,7 +154,6 @@ func clean_board():
 			t.to_clear = false
 	return clean
 func delete_tile(idx: Vector2i):
-	locked = true
 	# Tween
 	var tween: Tween = get_tree().create_tween()
 	tween.set_parallel(true)
@@ -192,7 +190,6 @@ func delete_tile(idx: Vector2i):
 		var bellow_idx = bellow.get_index()
 		move_child(bellow, current.get_index())
 		move_child(current, bellow_idx)
-	locked = false
 	
 func dump_ingridients() -> Array[Tile.ElementType]:
 	var ing = ingridients.duplicate()

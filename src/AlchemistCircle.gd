@@ -4,6 +4,7 @@ class_name AlchemistCircle
 @export var recipies: Array[Recipe]
 var holdings: Array[Tile.ElementType]
 var held_recipe: Recipe = null
+var held_item: HeldItem = null
 
 @onready var slot1: Button = $Slot1
 @onready var slot2: Button = $Slot2
@@ -20,7 +21,7 @@ var essence_images = {
 }
 
 signal send_back(item: Tile.ElementType)
-signal crafted_item(item)
+signal used_item(item: PackedScene)
 
 func _ready():
 	pass
@@ -39,6 +40,11 @@ func clear_items():
 	holdings.clear()
 	visualize()
 
+func use_ingridients():
+	held_recipe = null
+	holdings.clear()
+	visualize()
+
 func clear_item(ind: int):
 	held_recipe = null
 	emit_signal(send_back.get_name(), holdings[ind])
@@ -46,7 +52,7 @@ func clear_item(ind: int):
 	visualize()
 
 func add_item(item: Tile.ElementType):
-	if(holdings.size() >= 2):
+	if(holdings.size() >= 2 || held_item != null):
 		emit_signal(send_back.get_name(), item)
 		return
 	holdings.append(item)
@@ -65,4 +71,17 @@ func visualize():
 		slot2_texture.texture = null
 
 func craft():
-	crafted_item.emit(held_recipe.item_scene)
+	if held_recipe != null && held_item == null:
+		var item = HeldItem.new()
+		item.item_scene = held_recipe.item_scene
+		item.texture_normal = held_recipe.item_thumbnail
+		add_child(item)
+		item.pressed.connect(held_item_pressed)
+		held_item = item
+		item.size.x = size.x - 2 * slot1.size.x
+		item.size.y = size.x - 2 * slot1.size.x
+		use_ingridients()
+
+func held_item_pressed():
+	used_item.emit(held_item.item_scene)
+	held_item.queue_free()

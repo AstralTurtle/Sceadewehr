@@ -12,9 +12,6 @@ static var group_name: String = "active_items"
 func _ready():
 	add_to_group(group_name)
 
-func check_prerequisite():
-	pass
-
 func item_action():
 	pass
 

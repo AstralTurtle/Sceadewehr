@@ -6,7 +6,7 @@ class_name PlayerUI
 @onready var name_label: Label = get_node("MarginContainer/HBoxContainer/VBoxContainer/NameLabel")
 @onready var inventory: FlowContainer = get_node("MarginContainer/HBoxContainer/VBoxContainer/Inventory")
 @onready var alchemist_crafter: AlchemistCircle = get_node("MarginContainer/HBoxContainer/VBoxContainer/Control/AlchemistCircle")
-@onready var result_box: Control = get_node("MarginContainer/HBoxContainer/VBoxContainer/ResultBox")
+@onready var end_turn: Button = get_node("MarginContainer/HBoxContainer/VBoxContainer/EndTurnButton")
 var essence_images = {
 	Tile.ElementType.AIR: load('res://assets/AirEssence.png'),
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
@@ -25,7 +25,9 @@ func _ready():
 	var old_settings = name_label.label_settings
 	name_label.label_settings = old_settings.duplicate()
 	alchemist_crafter.send_back.connect(add_essence)
-	alchemist_crafter.crafted_item.connect(finish)
+	alchemist_crafter.used_item.connect(place_item)
+	end_turn.pressed.connect(alchemist_crafter.craft)
+	end_turn.pressed.connect(func(): turn_complete.emit())
 	add_essence(Tile.ElementType.AIR)
 	add_essence(Tile.ElementType.AIR)
 	add_essence(Tile.ElementType.AIR)
@@ -33,8 +35,10 @@ func _ready():
 func set_active(is_active: bool):
 	if (is_active):
 		name_label.label_settings.font_color = Color(1.1, 1.1, 1.1, 1.1)
+		end_turn.disabled = false
 	else:
 		name_label.label_settings.font_color = Color(1, 1, 1, 0.5)
+		end_turn.disabled = true
 
 func send_ingridient(button: TextureButton, essence: Tile.ElementType):
 	alchemist_crafter.add_item(essence)
@@ -48,7 +52,7 @@ func add_essence(essence: Tile.ElementType):
 	essence_rect.connect("button_up", send_recipe)
 	inventory.add_child(essence_rect)
 	
-func finish(item_scene: PackedScene):
+func place_item(item_scene: PackedScene):
 	var item: BaseItem = item_scene.instantiate()
 	# Add item somewhere on scene tree, based of placebility
 	if item.placeable == BaseItem.Placability.NotPlaceable:
@@ -57,7 +61,10 @@ func finish(item_scene: PackedScene):
 		pass
 	elif item.placeable == BaseItem.Placability.OnShadow:
 		pass
-	turn_complete.emit()
+	if item.delayed_action:
+		turn_complete.connect(item.item_action)
+	else:
+		item.item_action()
 
 func skip():
 	turn_complete.emit()

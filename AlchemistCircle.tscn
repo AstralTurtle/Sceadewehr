@@ -26,10 +26,12 @@ offset_top = 0.0239983
 offset_bottom = -0.0240021
 
 [node name="Slot1Texture" type="TextureRect" parent="Slot1"]
-layout_mode = 0
-offset_top = -25.559
-offset_right = 40.0
-offset_bottom = 14.441
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Slot2" type="Button" parent="."]
 layout_mode = 1
@@ -42,11 +44,12 @@ offset_top = 0.0239983
 offset_bottom = -0.0240021
 
 [node name="Slot2Texture" type="TextureRect" parent="Slot2"]
-layout_mode = 0
-offset_left = -53.376
-offset_top = -51.1179
-offset_right = -13.376
-offset_bottom = -11.1179
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="button_up" from="Slot1" to="." method="clear_item" binds= [0]]
 [connection signal="button_up" from="Slot2" to="." method="clear_item" binds= [1]]
