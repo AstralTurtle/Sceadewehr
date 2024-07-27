@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://4dtp771f5cy8"
+path="res://.godot/imported/tsunami.aseprite-a63056134046e755e6a78212553ff553.res"
+
+[deps]
+
+source_file="res://assets/items/tsunami.aseprite"
+dest_files=["res://.godot/imported/tsunami.aseprite-a63056134046e755e6a78212553ff553.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

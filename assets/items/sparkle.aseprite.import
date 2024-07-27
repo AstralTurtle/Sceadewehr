@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://c54uoje8bmb2k"
+path="res://.godot/imported/sparkle.aseprite-fd9ea3ca1b87d6762e01e705057aa8ef.res"
+
+[deps]
+
+source_file="res://assets/items/sparkle.aseprite"
+dest_files=["res://.godot/imported/sparkle.aseprite-fd9ea3ca1b87d6762e01e705057aa8ef.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

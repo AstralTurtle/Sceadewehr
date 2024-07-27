@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://u5ntkhe4wgom"
+path="res://.godot/imported/cove.aseprite-19d6cfb5a40573e33961274c2d3f569d.res"
+
+[deps]
+
+source_file="res://assets/items/cove.aseprite"
+dest_files=["res://.godot/imported/cove.aseprite-19d6cfb5a40573e33961274c2d3f569d.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

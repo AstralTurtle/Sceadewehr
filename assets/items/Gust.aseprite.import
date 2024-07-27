@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://bpjafukc18ufn"
+path="res://.godot/imported/Gust.aseprite-7c0a989b75cc91dfb7db5006541fa9e5.res"
+
+[deps]
+
+source_file="res://assets/items/Gust.aseprite"
+dest_files=["res://.godot/imported/Gust.aseprite-7c0a989b75cc91dfb7db5006541fa9e5.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

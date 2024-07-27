@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://8jn6wukldxdg"
+path="res://.godot/imported/brick_tile.aseprite-251f24926fef25005cebc93d73500ab3.res"
+
+[deps]
+
+source_file="res://assets/items/brick_tile.aseprite"
+dest_files=["res://.godot/imported/brick_tile.aseprite-251f24926fef25005cebc93d73500ab3.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
