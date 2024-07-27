@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://dxu4nbwfevs2t"
+path="res://.godot/imported/FireRune.aseprite-5692caec55c536e85d0195900f383b2d.res"
+
+[deps]
+
+source_file="res://assets/items/FireRune.aseprite"
+dest_files=["res://.godot/imported/FireRune.aseprite-5692caec55c536e85d0195900f383b2d.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

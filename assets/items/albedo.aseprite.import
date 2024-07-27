@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://bhuemmwb72gqa"
+path="res://.godot/imported/albedo.aseprite-e673882588e3242fec214d3f34aeb8c0.res"
+
+[deps]
+
+source_file="res://assets/items/albedo.aseprite"
+dest_files=["res://.godot/imported/albedo.aseprite-e673882588e3242fec214d3f34aeb8c0.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

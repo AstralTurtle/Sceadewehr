@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://bujn8upo7rrdf"
+path="res://.godot/imported/EarthRune.aseprite-8976d0e002a3c1ab8f7d57445494164c.res"
+
+[deps]
+
+source_file="res://assets/items/EarthRune.aseprite"
+dest_files=["res://.godot/imported/EarthRune.aseprite-8976d0e002a3c1ab8f7d57445494164c.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

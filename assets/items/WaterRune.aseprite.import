@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://du14prb54gxe0"
+path="res://.godot/imported/WaterRune.aseprite-efee656b1cda912f1dcd116628fd7f17.res"
+
+[deps]
+
+source_file="res://assets/items/WaterRune.aseprite"
+dest_files=["res://.godot/imported/WaterRune.aseprite-efee656b1cda912f1dcd116628fd7f17.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

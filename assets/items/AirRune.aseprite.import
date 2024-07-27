@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://by8kohd7furai"
+path="res://.godot/imported/AirRune.aseprite-fee979e43aff05d465ba377befe410ea.res"
+
+[deps]
+
+source_file="res://assets/items/AirRune.aseprite"
+dest_files=["res://.godot/imported/AirRune.aseprite-fee979e43aff05d465ba377befe410ea.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

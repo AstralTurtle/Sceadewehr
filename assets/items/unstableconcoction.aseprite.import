@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://bxu2odms8ddhj"
+path="res://.godot/imported/unstableconcoction.aseprite-e6f0fb38981ded14a857840af76bc51d.res"
+
+[deps]
+
+source_file="res://assets/items/unstableconcoction.aseprite"
+dest_files=["res://.godot/imported/unstableconcoction.aseprite-e6f0fb38981ded14a857840af76bc51d.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

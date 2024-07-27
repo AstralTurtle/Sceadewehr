@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://c7a1t7kc26y6w"
+path="res://.godot/imported/mudpuddle.aseprite-b2f0edc50e12a51dbdb606cb03b03881.res"
+
+[deps]
+
+source_file="res://assets/items/mudpuddle.aseprite"
+dest_files=["res://.godot/imported/mudpuddle.aseprite-b2f0edc50e12a51dbdb606cb03b03881.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
