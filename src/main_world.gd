@@ -22,7 +22,11 @@ func _ready():
 func continue_turn():
     var ingridients = game_board.dump_ingridients()
     var active: PlayerUI = player1
+    player1.set_active_button(true)
+    player2.set_active_button(false)
     if not player1_active:
+        player2.set_active_button(true)
+        player1.set_active_button(false)
         active = player2
     for i in ingridients:
         active.add_essence(i)

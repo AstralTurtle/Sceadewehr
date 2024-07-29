@@ -32,15 +32,20 @@ func _ready():
 	alchemist_crafter.used_item.connect(place_item)
 	end_turn.pressed.connect(alchemist_crafter.craft)
 	end_turn.pressed.connect(func(): turn_complete.emit())
+	end_turn.disabled = true
 	add_essence(Tile.ElementType.FIRE)
 	add_essence(Tile.ElementType.FIRE)
 
 func set_active(is_active: bool):
 	if (is_active):
 		name_label.label_settings.font_color = Color(1.1, 1.1, 1.1, 1.1)
-		end_turn.disabled = false
 	else:
 		name_label.label_settings.font_color = Color(1, 1, 1, 0.5)
+		
+func set_active_button(is_active: bool):
+	if (is_active):
+		end_turn.disabled = false
+	else:
 		end_turn.disabled = true
 
 func send_ingridient(button: TextureButton, essence: Tile.ElementType):
