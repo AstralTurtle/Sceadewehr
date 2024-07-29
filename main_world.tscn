@@ -29,6 +29,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 player_name = "Player 1"
+health = null
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -39,7 +40,7 @@ layout_mode = 2
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
-[node name="GameBoard" type="GridContainer" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
+[node name="GameBoard" type="GridContainer" parent="HBoxContainer/AspectRatioContainer/ColorRect" groups=["game_board_group"]]
 custom_minimum_size = Vector2(628, 628)
 layout_mode = 0
 offset_right = 628.0
@@ -65,3 +66,4 @@ color = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 player_name = "Player 2"
+health = null
