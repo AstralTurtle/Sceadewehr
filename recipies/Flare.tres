@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://cl45seklh3cpe"]
 
-[ext_resource type="PackedScene" path="res://items/flare.tscn" id="1_kw4ib"]
+[ext_resource type="PackedScene" uid="uid://bv15o7jlecuyl" path="res://items/flare.tscn" id="1_kw4ib"]
 [ext_resource type="Script" path="res://src/Recipe.gd" id="1_xbaot"]
 [ext_resource type="Texture2D" uid="uid://dgd8b2ic0mjmy" path="res://assets/items/sparkle.png" id="2_qcwn6"]
 
