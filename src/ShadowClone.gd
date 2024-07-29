@@ -17,9 +17,14 @@ func move_forward():
 		stunned = false
 		return
 	position.y += grid_interval
-	if grid_interval * 8:
+	if position.y > grid_interval * 8:
 		do_damage.emit(damage / (2 if damp else 1), team)
 		queue_free()
+
+func destroy():
+	if !damp:
+		do_damage.emit(damage / 2, (team + 1) % 2)
+	queue_free()
 
 func _ready():
 	add_to_group(group_name)
