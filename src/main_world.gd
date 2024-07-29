@@ -10,11 +10,14 @@ var player1_active: bool = true
 func _ready():
     game_board.swap_complete.connect(continue_turn)
     shadow_clones.do_damage.connect(process_damage)
+    game_board.clear_board(game_board.tiles)
     var ing = game_board.dump_ingridients()
-    player1.essence_list.append_array(ing)
+    for i in ing:
+        player1.add_essence(i)
+        player2.add_essence(i)
     player1.set_active(true)
-    player2.essence_list.append_array(ing)
     player2.set_active(false)
+
 
 func continue_turn():
     var ingridients = game_board.dump_ingridients()

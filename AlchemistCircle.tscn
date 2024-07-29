@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bra8xi6qr7t4y" path="res://assets/TransmutationCircle.png" id="1_rj6li"]
 [ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_csryf"]
 [ext_resource type="Resource" uid="uid://cnv8r4t5o0rlw" path="res://recipies/TestAirAir.tres" id="3_bkhwk"]
-[ext_resource type="Resource" uid="uid://cl45seklh3cpe" path="res://recipies/Flare.tres" id="4_t2fa1"]
+[ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="4_t2fa1"]
 
 [node name="AlchemistCircle" type="TextureRect"]
 anchors_preset = -1
