@@ -59,9 +59,10 @@ func place_item(item_scene: PackedScene, pos: Vector2):
 	if item.placeable == BaseItem.Placability.NotPlaceable:
 		get_tree().root.add_child(item)
 	elif item.placeable == BaseItem.Placability.OnTile:
-		
+		get_tree().root.get_node('MainWorld/HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard')
 		pass
 	elif item.placeable == BaseItem.Placability.OnShadow:
+		get_tree().root.get_node('MainWorld/HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard')
 		pass
 	if item.delayed_action:
 		turn_complete.connect(item.item_action)
