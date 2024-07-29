@@ -3,10 +3,10 @@ name: Publish Sceadewehr to Itch.io
 on:
  push:
   branches:
-  - main
+  - master
  pull_request:
   branches:
-  - main
+  - master
 env:
  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }} # Needs to be added through github
  DISCORD_WEBHOOK: ${{secrets.DISCORD_WEBHOOK}} # Needs to be added through github
