@@ -51,7 +51,7 @@ jobs:
   - name: Export Web
     run: |
     sudo mkdir -p ./
-    sudo ./godot --headless --path ./ --export-release "Web" ./
+    ./godot --headless --path ./ --export-release "Web" ./
     
 
   - uses: actions/upload-artifact@v2
