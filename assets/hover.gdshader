@@ -18,9 +18,11 @@ void fragment() {
 	float dist = (distance(recentered, a_center)/divisions-radius/100.);
 	float feathered = 1.-smoothstep(0., 0.01, dist);
 	
-	vec2 remouse = mouse_pos/628.*8.;
+	vec2 remouse = mouse_pos/652.*8.;
 	float mouse_dist = ((1.-distance(remouse, recentered)/8.)-0.94)*20.;
-	//COLOR = vec4(vec3(.2, .4, .6), feathered/10. + mix(0.0, 1.5, mouse_dist*feathered));
-	COLOR = vec4(vec3(.2, .4, .6), float(show)*(max(5.*feathered*mouse_dist, 0.) + feathered/5.));
-	//COLOR = vec4(vec3(mouse_dist), 1.);
+	float dist2 = distance(remouse, a_center);
+	float funny = (1.-(dist2*dist2*dist2))-0.5;
+	vec3 added_color = mix(vec3(0.), vec3(0.3, 0.3, 1.), step(0.2, funny));
+	COLOR = vec4(vec3(.5)+added_color, float(show)*funny);
+	//COLOR = vec4(vec3(dist2), 1.);
 }
