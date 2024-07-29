@@ -29,6 +29,11 @@ project/assembly_name="Sceadewehr"
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
+[github_to_itch]
+
+config/itch_username="astralturtle329"
+config/itch_project_name="sceadewehr"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

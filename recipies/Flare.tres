@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://dwc547nogeq23"]
+
+[ext_resource type="PackedScene" uid="uid://08k1om18pqq" path="res://items/flare.tscn" id="1_kw4ib"]
+[ext_resource type="Script" path="res://src/Recipe.gd" id="1_xbaot"]
+[ext_resource type="Texture2D" uid="uid://dgd8b2ic0mjmy" path="res://assets/items/sparkle.png" id="2_qcwn6"]
+
+[resource]
+script = ExtResource("1_xbaot")
+ingridients = Array[int]([2, 2])
+item_scene = ExtResource("1_kw4ib")
+item_thumbnail = ExtResource("2_qcwn6")

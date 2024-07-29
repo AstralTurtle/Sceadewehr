@@ -15,7 +15,7 @@ var essence_images = {
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
 	Tile.ElementType.FIRE: load('res://assets/FireEssence.png'),
 	Tile.ElementType.EARTH: load('res://assets/EarthEssence.png'),
-	Tile.ElementType.BODY:  load('res://assets/Body.png'),
+	Tile.ElementType.BODY: load('res://assets/Body.png'),
 	Tile.ElementType.SOUL: load('res://assets/Soul.png'),
 	Tile.ElementType.MERCURY: load('res://assets/Mercury.png')
 }
@@ -52,11 +52,11 @@ func clear_item(ind: int):
 	visualize()
 
 func add_item(item: Tile.ElementType):
-	if(holdings.size() >= 2 || held_item != null):
+	if (holdings.size() >= 2 || held_item != null):
 		emit_signal(send_back.get_name(), item)
 		return
 	holdings.append(item)
-	if(holdings.size() == 2):
+	if (holdings.size() == 2):
 		validate_recipe()
 	visualize()
 
@@ -75,11 +75,11 @@ func craft():
 		var item = HeldItem.new()
 		item.item_scene = held_recipe.item_scene
 		item.texture_normal = held_recipe.item_thumbnail
+		item.scale = Vector2(4, 4)
+		item.position = Vector2(31, 16)
 		add_child(item)
 		item.pressed.connect(held_item_pressed)
 		held_item = item
-		item.size.x = size.x - 2 * slot1.size.x
-		item.size.y = size.x - 2 * slot1.size.x
 		use_ingridients()
 
 func held_item_pressed():

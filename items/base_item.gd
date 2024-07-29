@@ -6,7 +6,7 @@ static var group_name: String = "active_items"
 @export var placeable: Placability = Placability.OnTile
 @export var is_on_enemy: bool = true
 @export var delayed_action: bool = false
-
+@export var texture: Texture
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

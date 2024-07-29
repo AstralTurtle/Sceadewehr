@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://do1q7ooisq1bp"]
+
+[ext_resource type="Script" path="res://placer.gd" id="1_2hm30"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2hm30")

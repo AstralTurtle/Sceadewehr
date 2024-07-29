@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://08k1om18pqq"]
+
+[ext_resource type="PackedScene" uid="uid://dcvo45plmn1nu" path="res://items/test_item.tscn" id="1_b7cp0"]
+[ext_resource type="Script" path="res://Flare.gd" id="2_0pll6"]
+[ext_resource type="Texture2D" uid="uid://dgd8b2ic0mjmy" path="res://assets/items/sparkle.png" id="3_3nfy4"]
+
+[node name="TestItem" instance=ExtResource("1_b7cp0")]
+script = ExtResource("2_0pll6")
+item_name = ""
+placeable = 2
+texture = ExtResource("3_3nfy4")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_3nfy4")

@@ -18,6 +18,7 @@ var essence_images = {
 }
 var essence_list: Array[Tile.ElementType]
 
+
 signal turn_complete()
 
 func _ready():
@@ -28,9 +29,8 @@ func _ready():
 	alchemist_crafter.used_item.connect(place_item)
 	end_turn.pressed.connect(alchemist_crafter.craft)
 	end_turn.pressed.connect(func(): turn_complete.emit())
-	add_essence(Tile.ElementType.AIR)
-	add_essence(Tile.ElementType.AIR)
-	add_essence(Tile.ElementType.AIR)
+	add_essence(Tile.ElementType.FIRE)
+	add_essence(Tile.ElementType.FIRE)
 
 func set_active(is_active: bool):
 	if (is_active):
@@ -52,12 +52,14 @@ func add_essence(essence: Tile.ElementType):
 	essence_rect.connect("button_up", send_recipe)
 	inventory.add_child(essence_rect)
 	
-func place_item(item_scene: PackedScene):
+func place_item(item_scene: PackedScene, pos: Vector2):
 	var item: BaseItem = item_scene.instantiate()
+	item.global_position = pos
 	# Add item somewhere on scene tree, based of placebility
 	if item.placeable == BaseItem.Placability.NotPlaceable:
 		get_tree().root.add_child(item)
 	elif item.placeable == BaseItem.Placability.OnTile:
+		
 		pass
 	elif item.placeable == BaseItem.Placability.OnShadow:
 		pass

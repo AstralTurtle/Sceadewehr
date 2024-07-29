@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpbublkg4tlwf"]
+[gd_scene load_steps=3 format=3 uid="uid://dpbublkg4tlwf"]
 
+[ext_resource type="Texture2D" uid="uid://dgd8b2ic0mjmy" path="res://assets/items/sparkle.png" id="1_ow662"]
 [ext_resource type="Script" path="res://src/HeldItem.gd" id="1_toty5"]
 
 [node name="HeldItem" type="TextureButton"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 0.051
+anchor_bottom = 0.094
+offset_left = 1.0
+offset_top = 4.0
+offset_right = -48.28
+offset_bottom = -47.68
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(4, 4)
+texture_normal = ExtResource("1_ow662")
+stretch_mode = 0
 script = ExtResource("1_toty5")
