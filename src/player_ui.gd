@@ -81,8 +81,8 @@ func place_on_grid() -> Vector2:
 	await mouse_pressed
 	hover_mat.set_shader_parameter("show", false)
 	var remouse_pos = floor((game_board.get_local_mouse_position()/game_board.size.x)*8.0)*game_board.size.x/8.0;
-	remouse_pos.x += game_board.size.x/16
-	remouse_pos.y += game_board.size.x/16
+	remouse_pos.x += game_board.size.x/8/3
+	remouse_pos.y += game_board.size.x/8/3
 	return remouse_pos 
 
 func skip():
