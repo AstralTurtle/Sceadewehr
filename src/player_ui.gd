@@ -14,9 +14,9 @@ var essence_images = {
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
 	Tile.ElementType.FIRE: load('res://assets/FireEssence.png'),
 	Tile.ElementType.EARTH: load('res://assets/EarthEssence.png'),
-	Tile.ElementType.BODY: load('res://assets/Body.png'),
-	Tile.ElementType.SOUL: load('res://assets/Soul.png'),
-	Tile.ElementType.MERCURY: load('res://assets/Mercury.png')
+	Tile.ElementType.BODY: load('res://assets/BodyEssence.png'),
+	Tile.ElementType.SOUL: load('res://assets/SoulEssence.png'),
+	Tile.ElementType.MERCURY: load('res://assets/MercuryEssence.png')
 }
 var essence_list: Array[Tile.ElementType]
 
@@ -85,10 +85,10 @@ func place_on_grid() -> Vector2:
 	hover_mat.set_shader_parameter("show", true)
 	await mouse_pressed
 	hover_mat.set_shader_parameter("show", false)
-	var remouse_pos = floor((game_board.get_local_mouse_position()/game_board.size.x)*8.0)*game_board.size.x/8.0;
-	remouse_pos.x += game_board.size.x/8/3
-	remouse_pos.y += game_board.size.x/8/3
-	return remouse_pos 
+	var remouse_pos = floor((game_board.get_local_mouse_position() / game_board.size.x) * 8.0) * game_board.size.x / 8.0;
+	remouse_pos.x += game_board.size.x / 8 / 3
+	remouse_pos.y += game_board.size.x / 8 / 3
+	return remouse_pos
 
 func skip():
 	turn_complete.emit()
