@@ -7,6 +7,8 @@ class_name PlayerUI
 @onready var inventory: FlowContainer = get_node("MarginContainer/HBoxContainer/VBoxContainer/Inventory")
 @onready var alchemist_crafter: AlchemistCircle = get_node("MarginContainer/HBoxContainer/VBoxContainer/Control/AlchemistCircle")
 @onready var end_turn: Button = get_node("MarginContainer/HBoxContainer/VBoxContainer/EndTurnButton")
+@onready var game_board: GameBoard = get_tree().get_first_node_in_group("game_board_group")
+@onready var hover_mat: ShaderMaterial = load("res://assets/hover.material")
 var essence_images = {
 	Tile.ElementType.AIR: load('res://assets/AirEssence.png'),
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
@@ -20,6 +22,7 @@ var essence_list: Array[Tile.ElementType]
 
 
 signal turn_complete()
+signal mouse_pressed()
 
 func _ready():
 	name_label.text = player_name
@@ -52,22 +55,38 @@ func add_essence(essence: Tile.ElementType):
 	essence_rect.connect("button_up", send_recipe)
 	inventory.add_child(essence_rect)
 	
-func place_item(item_scene: PackedScene, pos: Vector2):
+func place_item(item_scene: PackedScene):
 	var item: BaseItem = item_scene.instantiate()
-	item.global_position = pos
 	# Add item somewhere on scene tree, based of placebility
 	if item.placeable == BaseItem.Placability.NotPlaceable:
 		get_tree().root.add_child(item)
 	elif item.placeable == BaseItem.Placability.OnTile:
-		get_tree().root.get_node('MainWorld/HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard')
-		pass
+		var place_pos = await place_on_grid()
+		get_tree().root.get_node('MainWorld/HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard').add_child(item)
+		item.position = place_pos
 	elif item.placeable == BaseItem.Placability.OnShadow:
 		get_tree().root.get_node('MainWorld/HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard')
-		pass
+
 	if item.delayed_action:
 		turn_complete.connect(item.item_action)
 	else:
 		item.item_action()
 
+func _input(event):
+	if event.is_action_released("mouse_press"):
+		mouse_pressed.emit()
+
+func place_on_grid() -> Vector2:
+	hover_mat.set_shader_parameter("show", true)
+	await mouse_pressed
+	hover_mat.set_shader_parameter("show", false)
+	var remouse_pos = floor((game_board.get_local_mouse_position()/game_board.size.x)*8.0)*game_board.size.x/8.0;
+	remouse_pos.x += game_board.size.x/16
+	remouse_pos.y += game_board.size.x/16
+	return remouse_pos 
+
 func skip():
 	turn_complete.emit()
+
+func _process(_delta):
+	hover_mat.set_shader_parameter("mouse_pos", game_board.get_local_mouse_position())

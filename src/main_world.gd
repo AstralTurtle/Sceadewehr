@@ -5,7 +5,6 @@ class_name MainWorld
 @onready var player2: PlayerUI = $HBoxContainer/PlayerUi2
 @onready var game_board: GameBoard = $HBoxContainer/AspectRatioContainer/ColorRect/GameBoard
 @onready var shadow_clones: CloneBoard = $HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard
-@onready var hover_mat: ShaderMaterial = load("res://assets/hover.material")
 var player1_active: bool = true
 
 func _ready():
@@ -26,8 +25,6 @@ func continue_turn():
         active.add_essence(i)
     await active.turn_complete
     print("hello")
-    # hover_mat.set_shader_parameter("show", true)
-    # hover_mat.set_shader_parameter("show", false)
     
     # Switch turn
     player1_active = !player1_active
@@ -35,8 +32,6 @@ func continue_turn():
     player2.set_active(!player1_active)
     game_board.locked = false
     
-func _process(_delta):
-    hover_mat.set_shader_parameter("mouse_pos", game_board.get_local_mouse_position())
     
 func process_damage(damage: int, team: int):
     if team == 0:
