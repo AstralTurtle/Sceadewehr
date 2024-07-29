@@ -27,7 +27,7 @@ project/assembly_name="Sceadewehr"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/github_to_itch/plugin.cfg")
 
 [github_to_itch]
 
