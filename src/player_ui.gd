@@ -40,12 +40,10 @@ func _ready():
 	end_turn.pressed.connect(alchemist_crafter.craft)
 	end_turn.pressed.connect(func(): turn_complete.emit())
 	end_turn.disabled = true
-	for i in test_essences:
-		add_essence(i)
-
-func clear():
 	for i in inventory.get_children():
 		i.queue_free()
+	for i in test_essences:
+		add_essence(i)
 
 func set_active(is_active: bool):
 	if (is_active):

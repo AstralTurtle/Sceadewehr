@@ -20,7 +20,9 @@ func _ready():
 func create_clone(team: int):
 	var clone: ShadowClone = shadow_clone.instantiate()
 	clone.global_position = get_random_pos()
-	clone.grid_interval = game_board.size.x / 8
+	# clone.grid_interval = game_board.size.x / 8
+	clone.grid_interval = 652.0 / 8
+	print(clone.grid_interval)
 	clone.add_to_group(player_one_goup if team == 0 else player_two_goup)
 	clone.set_team(team)
 	clone.do_damage.connect(func(x, y): do_damage.emit(x, y))
