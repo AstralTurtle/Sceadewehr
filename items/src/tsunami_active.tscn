@@ -26,5 +26,5 @@ emitting = false
 amount = 256
 process_material = SubResource("ParticleProcessMaterial_dnmmf")
 texture = ExtResource("2_h788m")
-lifetime = 2.0
+lifetime = 2.1
 one_shot = true
