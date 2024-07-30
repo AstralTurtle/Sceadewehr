@@ -12,7 +12,8 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_ipkvy")
 script = ExtResource("2_squqw")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Body" type="AnimatableBody2D" parent="."]
+sync_to_physics = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 shape = SubResource("RectangleShape2D_b505p")

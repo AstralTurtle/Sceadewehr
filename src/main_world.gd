@@ -7,6 +7,8 @@ class_name MainWorld
 @onready var shadow_clones: CloneBoard = $HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard
 var player1_active: bool = true
 
+var turn_counter = 0
+
 func _ready():
     game_board.swap_complete.connect(continue_turn)
     shadow_clones.do_damage.connect(process_damage)
@@ -38,11 +40,20 @@ func continue_turn():
     player1.set_active(player1_active)
     player2.set_active(!player1_active)
     game_board.locked = false
+    turn_counter += 1
+    if turn_counter % 2 == 0:
+        get_tree().call_group(ShadowClone.group_name, 'move_forward')
     
     
 func process_damage(damage: int, team: int):
     print('process damage', damage, team)
-    if team == 0:
+    if team == 1:
         player1.decrease_health(damage)
-    elif team == 1:
+    elif team == 0:
         player2.decrease_health(damage)
+
+func get_player(num: int):
+    if num == 0:
+        return player1
+    if num == 1:
+        return player2

@@ -3,12 +3,15 @@ class_name PlayerUI
 
 @export var player_name: String = ""
 @export var health = 10
+@export var player: int = 0
 @onready var name_label: Label = get_node("MarginContainer/HBoxContainer/VBoxContainer/NameLabel")
+@onready var hp_label: Label = get_node("MarginContainer/HBoxContainer/VBoxContainer/HPLabel")
 @onready var inventory: FlowContainer = get_node("MarginContainer/HBoxContainer/VBoxContainer/Inventory")
 @onready var alchemist_crafter: AlchemistCircle = get_node("MarginContainer/HBoxContainer/VBoxContainer/Control/AlchemistCircle")
 @onready var end_turn: Button = get_node("MarginContainer/HBoxContainer/VBoxContainer/EndTurnButton")
 @onready var game_board: GameBoard = get_tree().get_first_node_in_group("game_board_group")
 @onready var hover_mat: ShaderMaterial = load("res://assets/hover.material")
+@export var test_essences: Array[Tile.ElementType] = []
 var shielded: bool = false
 var essence_images = {
 	Tile.ElementType.AIR: load('res://assets/AirEssence.png'),
@@ -26,7 +29,8 @@ signal turn_complete()
 signal mouse_pressed()
 
 func _ready():
-	name_label.text = player_name + " HP - " + str(health)
+	name_label.text = player_name
+	hp_label.text = "HP - " + str(health)
 	var old_settings = name_label.label_settings
 	name_label.label_settings = old_settings.duplicate()
 	alchemist_crafter.send_back.connect(add_essence)
@@ -34,8 +38,9 @@ func _ready():
 	end_turn.pressed.connect(alchemist_crafter.craft)
 	end_turn.pressed.connect(func(): turn_complete.emit())
 	end_turn.disabled = true
-	add_essence(Tile.ElementType.FIRE)
-	add_essence(Tile.ElementType.FIRE)
+	for i in test_essences:
+		add_essence(i)
+		
 
 func set_active(is_active: bool):
 	if (is_active):
@@ -63,6 +68,7 @@ func add_essence(essence: Tile.ElementType):
 	
 func place_item(item_scene: PackedScene):
 	var item: BaseItem = item_scene.instantiate()
+	item.player = player
 	# Add item somewhere on scene tree, based of placebility
 	if item.placeable == BaseItem.Placability.NotPlaceable:
 		get_tree().root.add_child(item)
@@ -98,12 +104,9 @@ func _process(_delta):
 	hover_mat.set_shader_parameter("mouse_pos", game_board.get_local_mouse_position())
 
 func decrease_health(dmg: int):
-	print('decrease_health')
 	if shielded:
 		shielded = false
 		return
 	else:
-		print('what')
 		health -= dmg
-		name_label.text = player_name + " HP - " + str(health)
-		print(health)
+		hp_label.text = "HP - " + str(health)

@@ -5,6 +5,7 @@ class_name AlchemistCircle
 var holdings: Array[Tile.ElementType]
 var held_recipe: Recipe = null
 var held_item: HeldItem = null
+var player: int
 
 @onready var slot1: Button = $Slot1
 @onready var slot2: Button = $Slot2

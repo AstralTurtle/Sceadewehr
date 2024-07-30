@@ -32,7 +32,7 @@ enum ElementType {
 }
 
 func _gui_input(event):
-	if event is InputEventMouseButton&&event.is_released():
+	if event is InputEventMouseButton && event.is_released():
 		emit_signal('tile_selected', grid_index)
 
 func _ready():
@@ -49,11 +49,8 @@ func set_focused(b: bool):
 	get_node('f4').visible = b
 	
 func set_grid_index(new_index: Vector2i):
-	print('old grid_index')
-	print(grid_index)
 	grid_index = new_index
-	print('new grid_index')
-	print(grid_index)
+
 
 func scramble():
 	var new_type: ElementType = tile_type

@@ -12,7 +12,7 @@ func item_action():
 	particles.one_shot = true
 	particles.emitting = true
 	await particles.finished
-	var areas = area.get_overlapping_areas()
+	var areas = area.get_overlapping_bodies()
 	
 	print(areas)
 	for a in areas:
