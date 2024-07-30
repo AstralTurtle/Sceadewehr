@@ -39,6 +39,8 @@ func continue_turn():
     player1_active = !player1_active
     player1.set_active(player1_active)
     player2.set_active(!player1_active)
+    player1.set_active_button(false)
+    player2.set_active_button(false)
     game_board.locked = false
     turn_counter += 1
     if turn_counter % 2 == 0:
