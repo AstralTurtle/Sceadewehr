@@ -10,6 +10,6 @@ func is_valid(proposed: Array[Tile.ElementType]) -> bool:
     if ingridients.size() != proposed.size():
         return false
     for i in proposed:
-        if !ingridients.has(i):
+        if ingridients.count(i) != proposed.count(i):
             return false
     return true

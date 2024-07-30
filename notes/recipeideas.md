@@ -71,4 +71,4 @@ Fire + Soul - Sun in a bottle - Destroy radius 3 circle of clones (or 3x3 square
 
 Earth + Fire - 
 
-Air + Fire - 
+Air + Fire - Combustion - Destroy a shadow clone. Clones next to it are pushed away

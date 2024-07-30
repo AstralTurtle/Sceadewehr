@@ -29,7 +29,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 player_name = "Player 1"
-test_essences = Array[int]([4, 4])
+test_essences = Array[int]([5, 5])
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -67,4 +67,4 @@ layout_mode = 2
 size_flags_horizontal = 3
 player_name = "Player 2"
 player = 1
-test_essences = Array[int]([2, 2])
+test_essences = Array[int]([0, 0])

@@ -50,7 +50,6 @@ func continue_turn():
     
     
 func process_damage(damage: int, team: int):
-    print('process damage', damage, team)
     if team == 1:
         player1.decrease_health(damage)
     elif team == 0:
