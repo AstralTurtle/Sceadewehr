@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv15o7jlecuyl"]
+[gd_scene load_steps=9 format=3 uid="uid://bv15o7jlecuyl"]
 
 [ext_resource type="PackedScene" uid="uid://dcvo45plmn1nu" path="res://items/test_item.tscn" id="1_b7cp0"]
 [ext_resource type="Script" path="res://items/src/Flare.gd" id="2_tm025"]
 [ext_resource type="Texture2D" uid="uid://dgd8b2ic0mjmy" path="res://assets/items/sparkle.png" id="3_3nfy4"]
+[ext_resource type="Texture2D" uid="uid://vvog3vpf4m4y" path="res://assets/FireEssence.png" id="4_ij7x0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyxvx"]
 size = Vector2(64, 64)
@@ -21,9 +22,10 @@ gravity = Vector3(0, 0, 0)
 linear_accel_max = 68.55
 radial_accel_max = 121.7
 tangential_accel_max = 125.75
-scale_max = 3.0
+scale_min = 0.0
 color_initial_ramp = SubResource("GradientTexture1D_x2unv")
-hue_variation_max = 0.15
+hue_variation_min = -0.04
+hue_variation_max = 0.07
 
 [node name="TestItem" instance=ExtResource("1_b7cp0")]
 script = ExtResource("2_tm025")
@@ -40,4 +42,4 @@ shape = SubResource("RectangleShape2D_fyxvx")
 [node name="GPUParticles2D" parent="." index="2"]
 amount = 64
 process_material = SubResource("ParticleProcessMaterial_qauxa")
-one_shot = false
+texture = ExtResource("4_ij7x0")

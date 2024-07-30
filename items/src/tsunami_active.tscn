@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwh0w7dljjdnq"]
+
+[ext_resource type="Script" path="res://TsunamiActive.gd" id="1_lj3p6"]
+[ext_resource type="Texture2D" uid="uid://x22yph8iucdu" path="res://assets/WaterEssence.png" id="2_h788m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdd8u"]
+size = Vector2(658, 330)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dnmmf"]
+lifetime_randomness = 0.14
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(329, 177, 1)
+gravity = Vector3(0, -98, 0)
+
+[node name="TsunamiActive" type="Area2D"]
+script = ExtResource("1_lj3p6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(319, 155)
+shape = SubResource("RectangleShape2D_vdd8u")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(320, 160)
+emitting = false
+amount = 256
+process_material = SubResource("ParticleProcessMaterial_dnmmf")
+texture = ExtResource("2_h788m")
+lifetime = 2.0
+one_shot = true

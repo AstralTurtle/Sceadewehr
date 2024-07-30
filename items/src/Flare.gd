@@ -13,10 +13,8 @@ func item_action():
 	particles.emitting = true
 	await particles.finished
 	var areas = area.get_overlapping_bodies()
-	
 	print(areas)
 	for a in areas:
-		var parent = a.get_parent()
-		if parent is ShadowClone:
-			(parent as ShadowClone).destroy()
+		if a is ShadowClone:
+			(a as ShadowClone).destroy()
 	queue_free()

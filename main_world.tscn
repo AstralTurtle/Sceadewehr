@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4gjlpymyavyj"]
+[gd_scene load_steps=6 format=3 uid="uid://c4gjlpymyavyj"]
 
 [ext_resource type="PackedScene" uid="uid://cppqvlypbi5wh" path="res://player_ui.tscn" id="1_c4g6l"]
 [ext_resource type="Script" path="res://src/main_world.gd" id="1_kop2j"]
 [ext_resource type="Script" path="res://src/GameBoard.gd" id="2_wvq78"]
 [ext_resource type="Material" uid="uid://dvgxvna08ep0b" path="res://assets/hover.material" id="3_marsv"]
 [ext_resource type="Script" path="res://src/CloneBoard.gd" id="3_uxvh6"]
-[ext_resource type="PackedScene" uid="uid://dwh0w7dljjdnq" path="res://items/src/tsunami_active.tscn" id="6_ax0lv"]
 
 [node name="MainWorld" type="Control"]
 layout_mode = 3
@@ -30,7 +29,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 player_name = "Player 1"
-test_essences = Array[int]([1, 1])
+test_essences = Array[int]([1, 0])
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -53,9 +52,6 @@ script = ExtResource("2_wvq78")
 
 [node name="CloneBoard" type="Node2D" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
 script = ExtResource("3_uxvh6")
-
-[node name="TsunamiActive" parent="HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard" instance=ExtResource("6_ax0lv")]
-position = Vector2(1, 314)
 
 [node name="FunnyRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer/ColorRect"]
 material = ExtResource("3_marsv")
