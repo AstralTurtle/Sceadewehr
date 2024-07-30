@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4gjlpymyavyj"]
+[gd_scene load_steps=7 format=3 uid="uid://c4gjlpymyavyj"]
 
 [ext_resource type="PackedScene" uid="uid://cppqvlypbi5wh" path="res://player_ui.tscn" id="1_c4g6l"]
 [ext_resource type="Script" path="res://src/main_world.gd" id="1_kop2j"]
 [ext_resource type="Script" path="res://src/GameBoard.gd" id="2_wvq78"]
 [ext_resource type="Material" uid="uid://dvgxvna08ep0b" path="res://assets/hover.material" id="3_marsv"]
 [ext_resource type="Script" path="res://src/CloneBoard.gd" id="3_uxvh6"]
+[ext_resource type="AudioStream" uid="uid://bcbjassrpun3j" path="res://assets/music/SceadewehrLoop.wav" id="6_st4kj"]
 
 [node name="MainWorld" type="Control"]
 layout_mode = 3
@@ -68,3 +69,7 @@ size_flags_horizontal = 3
 player_name = "Player 2"
 player = 1
 test_essences = Array[int]([2, 2])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_st4kj")
+volume_db = -5.0

@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_csryf"]
 [ext_resource type="Resource" uid="uid://cnv8r4t5o0rlw" path="res://recipies/TestAirAir.tres" id="3_bkhwk"]
 [ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="4_t2fa1"]
-[ext_resource type="Resource" uid="uid://sqi1ahljyns2" path="res://recipies/Cove.tres" id="5_w5h1e"]
-[ext_resource type="Resource" uid="uid://d3i8ic2pcxkwi" path="res://recipies/Tsunami.tres" id="6_mdxkx"]
-[ext_resource type="Resource" uid="uid://drimnofyx4qml" path="res://recipies/ShadowSelf.tres" id="7_lap4k"]
+[ext_resource type="Resource" path="res://recipies/Cove.tres" id="5_w5h1e"]
+[ext_resource type="Resource" path="res://recipies/Tsunami.tres" id="6_mdxkx"]
+[ext_resource type="Resource" path="res://recipies/ShadowSelf.tres" id="7_lap4k"]
 
 [node name="AlchemistCircle" type="TextureRect"]
 anchors_preset = -1

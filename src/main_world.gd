@@ -19,7 +19,9 @@ func _ready():
 		player1.add_essence(i)
 		player2.add_essence(i)
 	player1.set_active(true)
+	player1.player_name = Globals.player1_name
 	player2.set_active(false)
+	player2.player_name = Globals.player2_name
 	music.play()
 	music.finished.connect(music.play)
 	music.volume_db = Globals.volume
@@ -52,8 +54,8 @@ func continue_turn():
 		get_tree().call_group(ShadowClone.group_name, 'move_forward')
 		shadow_clones.create_clone(0)
 		shadow_clones.create_clone(1)
-    
-    
+	
+	
 func process_damage(damage: int, team: int):
 	print('process damage', damage, team)
 	if team == 1:

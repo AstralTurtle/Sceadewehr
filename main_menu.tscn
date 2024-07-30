@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2g3amtgoakl5"]
+[gd_scene load_steps=6 format=3 uid="uid://b2g3amtgoakl5"]
 
 [ext_resource type="Script" path="res://src/main_menu.gd" id="1_ue3ay"]
 [ext_resource type="AudioStream" uid="uid://bcbjassrpun3j" path="res://assets/music/SceadewehrLoop.wav" id="2_fy4rm"]
@@ -11,6 +11,9 @@ shadow_offset = Vector2(-5, 5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fekfx"]
 font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5s8e"]
+font_size = 20
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -82,5 +85,39 @@ min_value = -20.0
 max_value = 20.0
 tick_count = 20
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ColorRect"]
+[node name="NameHbox" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="p1" type="VBoxContainer" parent="ColorRect/VBoxContainer/NameHbox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/NameHbox/p1"]
+layout_mode = 2
+text = "Player 1 Name"
+label_settings = SubResource("LabelSettings_u5s8e")
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect/VBoxContainer/NameHbox/p1"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="ColorRect/VBoxContainer/NameHbox"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="p2" type="VBoxContainer" parent="ColorRect/VBoxContainer/NameHbox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/NameHbox/p2"]
+layout_mode = 2
+text = "Player 2 Name"
+label_settings = SubResource("LabelSettings_u5s8e")
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect/VBoxContainer/NameHbox/p2"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fy4rm")
+volume_db = -5.0
