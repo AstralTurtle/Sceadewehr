@@ -1,18 +1,18 @@
-extends Sprite2D
+extends CharacterBody2D
 class_name ShadowClone
 
 
 @export var damage: int = 5
-@export var move_anim_time: float = 0.25
+
+var speed = 400
+
 var team: int
 var stunned: bool = false;
 var damp: bool = false;
+@onready var target: Vector2 = position
 
+@export var textures: Array[Texture] = []
 
-var textures: Array[Texture] = [load("res://assets/SC1.png"), load("res://assets/SC2.png")]
-
-
-@onready var body: AnimatableBody2D = get_node('Body')
 
 static var group_name: String = "shadow_clones"
 var grid_interval: float
@@ -22,17 +22,13 @@ func move_forward():
 	if (stunned):
 		stunned = false
 		return
-	var new_movement = Vector2(position.x, position.y + grid_interval)
-	var tween = get_tree().create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(self, "position", new_movement, move_anim_time)
-
-	tween.set_trans(Tween.TRANS_EXPO)
-	tween.set_ease(Tween.EASE_OUT)
-	
+	target = Vector2(position.x, position.y + grid_interval)
 	if position.y > grid_interval * 8:
 		do_damage.emit(damage / (2 if damp else 1), team)
 		queue_free()
+
+func move_backwards(steps: int):
+	target = Vector2(position.x, position.y - grid_interval * steps)
 
 func destroy():
 	if !damp:
@@ -44,4 +40,9 @@ func _ready():
 
 func set_team(new_team: int):
 	team = new_team
-	texture = textures[team]
+	get_node('Sprite2D').texture = textures[team]
+
+func _physics_process(delta):
+	velocity = position.direction_to(target) * speed
+	if position.distance_to(target) > 10:
+		move_and_slide()
