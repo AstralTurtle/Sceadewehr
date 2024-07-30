@@ -69,6 +69,7 @@ func add_essence(essence: Tile.ElementType):
 func place_item(item_scene: PackedScene):
 	var item: BaseItem = item_scene.instantiate()
 	item.player = player
+	item.name = item.item_name
 	# Add item somewhere on scene tree, based of placebility
 	if item.placeable == BaseItem.Placability.NotPlaceable:
 		get_tree().root.add_child(item)

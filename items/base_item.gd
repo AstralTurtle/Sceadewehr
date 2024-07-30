@@ -9,6 +9,7 @@ static var group_name: String = "active_items"
 @export var texture: Texture
 @export var player: int
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group(group_name)
