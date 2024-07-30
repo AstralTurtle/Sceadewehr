@@ -6,6 +6,7 @@ class_name MainWorld
 @onready var game_board: GameBoard = $HBoxContainer/AspectRatioContainer/ColorRect/GameBoard
 @onready var shadow_clones: CloneBoard = $HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard
 @onready var music: AudioStreamPlayer = $AudioStreamPlayer
+@onready var turn_change_label: Label = $TurnChangeLabel
 var player1_active: bool = true
 
 var turn_counter = 0
@@ -25,6 +26,7 @@ func _ready():
 	music.play()
 	music.finished.connect(music.play)
 	music.volume_db = Globals.volume
+	turn_change_label.hide()
 	
 
 
@@ -54,6 +56,13 @@ func continue_turn():
 		get_tree().call_group(ShadowClone.group_name, 'move_forward')
 		shadow_clones.create_clone(0)
 		shadow_clones.create_clone(1)
+
+	turn_change_label.text = "Player 1's Turn!!!" if player1_active else "Player 2's Turn!!!"
+	turn_change_label.show()
+	var timer: SceneTreeTimer = get_tree().create_timer(0.5)
+	timer.timeout.connect(func():
+		turn_change_label.hide()
+	)
 	
 	
 func process_damage(damage: int, team: int):

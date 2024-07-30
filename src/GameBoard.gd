@@ -7,6 +7,7 @@ var tiles: Array[Array]
 var tile_scene: PackedScene = load("res://Tile.tscn")
 var ingridients: Array[Tile.ElementType] = []
 var locked: bool = false
+@onready var slide_sfx: AudioStreamPlayer = get_tree().root.get_node("MainWorld/SlideSFX")
 
 var selected_tile = null
 
@@ -26,7 +27,7 @@ func on_tile_clicked(pos: Vector2i):
 		selected_tile = pos
 		tiles[selected_tile.y][selected_tile.x].set_focused(true)
 	elif (selected_tile as Vector2).distance_to(pos as Vector2) < 1.5 and (selected_tile as Vector2).distance_to(pos as Vector2) > 0:
-
+		slide_sfx.play()
 		var selected: Tile = tiles[selected_tile.y][selected_tile.x]
 		var new_selection: Tile = tiles[pos.y][pos.x]
 		var selected_index = selected.get_index()
