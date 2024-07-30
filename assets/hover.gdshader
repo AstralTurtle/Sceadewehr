@@ -21,7 +21,7 @@ void fragment() {
 	vec2 remouse = mouse_pos/652.*8.;
 	float mouse_dist = ((1.-distance(remouse, recentered)/8.)-0.94)*20.;
 	float dist2 = distance(remouse, a_center);
-	float funny = (1.-(dist2*dist2*dist2))-0.5;
+	float funny = (1.-(dist2*dist2*dist2));
 	vec3 added_color = mix(vec3(0.), vec3(0.3, 0.3, 1.), step(0.2, funny));
 	COLOR = vec4(vec3(.5)+added_color, float(show)*funny);
 }
