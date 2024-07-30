@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_csryf"]
 [ext_resource type="Resource" uid="uid://cnv8r4t5o0rlw" path="res://recipies/TestAirAir.tres" id="3_bkhwk"]
 [ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="4_t2fa1"]
-[ext_resource type="PackedScene" uid="uid://dvgdqyh3dcf0y" path="res://items/cove.tscn" id="5_dtxc5"]
+[ext_resource type="PackedScene" path="res://items/cove.tscn" id="5_dtxc5"]
 [ext_resource type="Texture2D" uid="uid://bsmle50dq1nni" path="res://assets/items/cove.png" id="6_qll8g"]
 [ext_resource type="Script" path="res://src/Recipe.gd" id="7_66aw2"]
 

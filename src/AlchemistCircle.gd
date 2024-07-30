@@ -11,6 +11,7 @@ var player: int
 @onready var slot2: Button = $Slot2
 @onready var slot1_texture: TextureRect = $Slot1/Slot1Texture
 @onready var slot2_texture: TextureRect = $Slot2/Slot2Texture
+@onready var cursed_parent: GameBoard = get_tree().get_first_node_in_group("game_board_group")
 var essence_images = {
 	Tile.ElementType.AIR: load('res://assets/AirEssence.png'),
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
@@ -79,7 +80,15 @@ func craft():
 		item.scale = Vector2(4, 4)
 		item.position = Vector2(31, 16)
 		add_child(item)
-		item.pressed.connect(held_item_pressed)
+		var hack = held_item_pressed
+		var why_though = func():
+			item.pressed.connect(hack)
+		item.modulate = Color(0.46, 0.46, 0.451, 0.537)
+		cursed_parent.swap_complete.connect(func():
+			item.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			cursed_parent.swap_complete.connect(why_though, CONNECT_ONE_SHOT)
+		, CONNECT_ONE_SHOT
+		)
 		held_item = item
 		use_ingridients()
 

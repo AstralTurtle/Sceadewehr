@@ -20,6 +20,3 @@ func item_action():
 		if parent is ShadowClone:
 			(parent as ShadowClone).destroy()
 	queue_free()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
