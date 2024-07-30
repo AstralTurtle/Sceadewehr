@@ -45,6 +45,8 @@ func continue_turn():
     turn_counter += 1
     if turn_counter % 2 == 0:
         get_tree().call_group(ShadowClone.group_name, 'move_forward')
+        shadow_clones.create_clone(0)
+        shadow_clones.create_clone(1)
     
     
 func process_damage(damage: int, team: int):

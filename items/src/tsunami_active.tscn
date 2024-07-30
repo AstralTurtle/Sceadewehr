@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwh0w7dljjdnq"]
 
-[ext_resource type="Script" path="res://TsunamiActive.gd" id="1_lj3p6"]
+[ext_resource type="Script" path="res://items/src/TsunamiActive.gd" id="1_lj3p6"]
 [ext_resource type="Texture2D" uid="uid://x22yph8iucdu" path="res://assets/WaterEssence.png" id="2_h788m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdd8u"]

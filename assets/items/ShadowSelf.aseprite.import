@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://xmk6c6c2dkp4"
+path="res://.godot/imported/ShadowSelf.aseprite-00281b437e2066de20b8f91f4289e7ca.res"
+
+[deps]
+
+source_file="res://assets/items/ShadowSelf.aseprite"
+dest_files=["res://.godot/imported/ShadowSelf.aseprite-00281b437e2066de20b8f91f4289e7ca.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

@@ -17,9 +17,9 @@ var essence_images = {
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
 	Tile.ElementType.FIRE: load('res://assets/FireEssence.png'),
 	Tile.ElementType.EARTH: load('res://assets/EarthEssence.png'),
-	Tile.ElementType.BODY: load('res://assets/Body.png'),
-	Tile.ElementType.SOUL: load('res://assets/Soul.png'),
-	Tile.ElementType.MERCURY: load('res://assets/Mercury.png')
+	Tile.ElementType.BODY: load('res://assets/BodyEssence.png'),
+	Tile.ElementType.SOUL: load('res://assets/SoulEssence.png'),
+	Tile.ElementType.MERCURY: load('res://assets/MercuryEssence.png')
 }
 
 signal send_back(item: Tile.ElementType)

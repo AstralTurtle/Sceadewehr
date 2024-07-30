@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhm3gg86ro6vg"]
+[gd_scene load_steps=8 format=3 uid="uid://dhm3gg86ro6vg"]
 
 [ext_resource type="Texture2D" uid="uid://bra8xi6qr7t4y" path="res://assets/TransmutationCircle.png" id="1_rj6li"]
 [ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_csryf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="4_t2fa1"]
 [ext_resource type="Resource" uid="uid://sqi1ahljyns2" path="res://recipies/Cove.tres" id="5_w5h1e"]
 [ext_resource type="Resource" uid="uid://d3i8ic2pcxkwi" path="res://recipies/Tsunami.tres" id="6_mdxkx"]
+[ext_resource type="Resource" uid="uid://drimnofyx4qml" path="res://recipies/ShadowSelf.tres" id="7_lap4k"]
 
 [node name="AlchemistCircle" type="TextureRect"]
 anchors_preset = -1
@@ -17,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rj6li")
 script = ExtResource("2_csryf")
-recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("3_bkhwk"), ExtResource("4_t2fa1"), ExtResource("5_w5h1e"), ExtResource("6_mdxkx")])
+recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("3_bkhwk"), ExtResource("4_t2fa1"), ExtResource("5_w5h1e"), ExtResource("6_mdxkx"), ExtResource("7_lap4k")])
 
 [node name="Slot1" type="Button" parent="."]
 layout_mode = 1
