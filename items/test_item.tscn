@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcvo45plmn1nu"]
+[gd_scene load_steps=5 format=3 uid="uid://dcvo45plmn1nu"]
 
 [ext_resource type="Script" path="res://items/base_item.gd" id="1_1ftux"]
 [ext_resource type="Texture2D" uid="uid://mka84kumacyk" path="res://icon.svg" id="2_oyyhq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5v80"]
+size = Vector2(64, 64)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a4y3v"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
 
 [node name="TestItem" type="Node2D"]
 script = ExtResource("1_1ftux")
@@ -11,3 +18,13 @@ placeable = 0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
 texture = ExtResource("2_oyyhq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_i5v80")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_a4y3v")
+one_shot = true
