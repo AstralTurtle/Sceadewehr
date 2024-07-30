@@ -24,7 +24,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_ydabh")
-health = 1
 test_essences = Array[int]([0])
 
 [node name="bg" type="ColorRect" parent="."]
