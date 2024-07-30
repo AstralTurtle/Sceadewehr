@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dij6b0c8eyo0t"]
+
+[ext_resource type="Script" path="res://items/src/gust.gd" id="1_y2x5h"]
+[ext_resource type="Texture2D" uid="uid://b6n6uwse5x4he" path="res://assets/items/Gust.png" id="2_nfcjc"]
+
+[node name="Gust" type="Node2D"]
+script = ExtResource("1_y2x5h")
+item_name = "Gust"
+placeable = 0
+texture = ExtResource("2_nfcjc")

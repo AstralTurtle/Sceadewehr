@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1kkxq1d8kbi8"]
+
+[ext_resource type="Script" path="res://items/src/PureEssence.gd" id="1_pivmi"]
+[ext_resource type="Texture2D" uid="uid://cjkkhm7us55ne" path="res://assets/AirEssence.png" id="2_andmo"]
+[ext_resource type="Texture2D" uid="uid://cc3jpg2xw6gqo" path="res://assets/items/albedo.png" id="2_px3jj"]
+[ext_resource type="Texture2D" uid="uid://x22yph8iucdu" path="res://assets/WaterEssence.png" id="3_qymdh"]
+[ext_resource type="Texture2D" uid="uid://vvog3vpf4m4y" path="res://assets/FireEssence.png" id="4_6wx7n"]
+[ext_resource type="Texture2D" uid="uid://c0g1qqiskyfc5" path="res://assets/EarthEssence.png" id="5_6ckcw"]
+[ext_resource type="Texture2D" uid="uid://dq01hhedm2ast" path="res://assets/BodyEssence.png" id="6_lfawh"]
+[ext_resource type="Texture2D" uid="uid://cy7ekqogsohub" path="res://assets/SoulEssence.png" id="7_t88rx"]
+[ext_resource type="Texture2D" uid="uid://bykigxgokqggk" path="res://assets/MercuryEssence.png" id="8_jr64a"]
+
+[node name="Control" type="Node2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_pivmi")
+item_name = "Albedo"
+placeable = 0
+is_on_enemy = false
+texture = ExtResource("2_px3jj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.075
+anchor_bottom = 1.2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton0" type="TextureButton" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0385542
+anchor_top = 0.166667
+anchor_right = 0.231325
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_andmo")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton1" type="TextureButton" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.275591
+anchor_top = 0.166667
+anchor_right = 0.468362
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_qymdh")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton2" type="TextureButton" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512628
+anchor_top = 0.166667
+anchor_right = 0.705399
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_6wx7n")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton3" type="TextureButton" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.749665
+anchor_top = 0.166667
+anchor_right = 0.942436
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_6ckcw")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton4" type="TextureButton" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0756805
+anchor_top = 0.647059
+anchor_right = 0.194199
+anchor_bottom = 0.856209
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_lfawh")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton5" type="TextureButton" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312718
+anchor_top = 0.647059
+anchor_right = 0.431236
+anchor_bottom = 0.856209
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_t88rx")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton6" type="TextureButton" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.549755
+anchor_top = 0.647059
+anchor_right = 0.668273
+anchor_bottom = 0.856209
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_jr64a")
+metadata/_edit_use_anchors_ = true

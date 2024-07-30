@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3emfw5v7q4sf"]
+
+[ext_resource type="Script" path="res://items/src/brick.gd" id="1_pc1c3"]
+[ext_resource type="Texture2D" uid="uid://dw1nnhoh0wnft" path="res://assets/items/brick_tile.png" id="2_n6rpd"]
+[ext_resource type="Texture2D" uid="uid://crbywblyaejap" path="res://assets/items/brick.png" id="2_t5due"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu45k"]
+size = Vector2(16, 2)
+
+[node name="BaseItem" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_pc1c3")
+is_on_enemy = false
+delayed_action = true
+texture = ExtResource("2_t5due")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n6rpd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_qu45k")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://lf7gcofr706o"]
+
+[ext_resource type="PackedScene" uid="uid://b3emfw5v7q4sf" path="res://items/brick.tscn" id="1_kqavw"]
+[ext_resource type="Script" path="res://src/Recipe.gd" id="1_xb6oi"]
+[ext_resource type="Texture2D" uid="uid://crbywblyaejap" path="res://assets/items/brick.png" id="2_fdms0"]
+
+[resource]
+script = ExtResource("1_xb6oi")
+ingridients = Array[int]([3, 3])
+item_scene = ExtResource("1_kqavw")
+item_thumbnail = ExtResource("2_fdms0")

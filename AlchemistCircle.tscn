@@ -4,18 +4,12 @@
 [ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_csryf"]
 [ext_resource type="Resource" uid="uid://cnv8r4t5o0rlw" path="res://recipies/gust.tres" id="3_io0ol"]
 [ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="4_t2fa1"]
-<<<<<<< HEAD
 [ext_resource type="Resource" uid="uid://sqi1ahljyns2" path="res://recipies/Cove.tres" id="5_w5h1e"]
 [ext_resource type="Resource" uid="uid://d3i8ic2pcxkwi" path="res://recipies/Tsunami.tres" id="6_mdxkx"]
 [ext_resource type="Resource" uid="uid://drimnofyx4qml" path="res://recipies/ShadowSelf.tres" id="7_lap4k"]
 [ext_resource type="Resource" uid="uid://lf7gcofr706o" path="res://recipies/brick.tres" id="8_trwkf"]
 [ext_resource type="Resource" uid="uid://t35egvtp35pv" path="res://recipies/albedo.tres" id="9_tuq6n"]
 [ext_resource type="Resource" uid="uid://b3f208vh0a8cb" path="res://recipies/unstable_concoction.tres" id="10_gmweh"]
-=======
-[ext_resource type="Resource" path="res://recipies/Cove.tres" id="5_w5h1e"]
-[ext_resource type="Resource" path="res://recipies/Tsunami.tres" id="6_mdxkx"]
-[ext_resource type="Resource" path="res://recipies/ShadowSelf.tres" id="7_lap4k"]
->>>>>>> refs/remotes/origin/master
 
 [node name="AlchemistCircle" type="TextureRect"]
 anchors_preset = -1

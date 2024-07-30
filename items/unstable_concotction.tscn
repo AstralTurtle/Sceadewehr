@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl3biq346kb2j"]
+
+[ext_resource type="Script" path="res://items/src/UnstableConcotction.gd" id="1_xcpkt"]
+[ext_resource type="Texture2D" uid="uid://d3c7kg77b2ey5" path="res://assets/items/unstableconcoction.png" id="2_c0vb4"]
+
+[node name="UnstableConcoction" type="Node2D"]
+script = ExtResource("1_xcpkt")
+item_name = "Unstable Concoction"
+placeable = 0
+is_on_enemy = false
+texture = ExtResource("2_c0vb4")
