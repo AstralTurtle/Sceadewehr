@@ -1,15 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2g3amtgoakl5"]
+[gd_scene load_steps=7 format=3 uid="uid://b2g3amtgoakl5"]
 
 [ext_resource type="Script" path="res://src/main_menu.gd" id="1_ue3ay"]
 [ext_resource type="AudioStream" uid="uid://bcbjassrpun3j" path="res://assets/music/SceadewehrLoop.wav" id="2_fy4rm"]
+[ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_lf2rf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l87e4"]
-font_size = 100
+line_spacing = 5.0
+font = ExtResource("2_lf2rf")
+font_size = 96
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-5, 5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fekfx"]
+font = ExtResource("2_lf2rf")
 font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_u5s8e"]
@@ -41,6 +45,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TopSpacer" type="Control" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 text = "Sceadwehr"
@@ -55,6 +63,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_lf2rf")
 theme_override_font_sizes/font_size = 50
 text = "Play"
 

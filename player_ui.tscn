@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cppqvlypbi5wh"]
+[gd_scene load_steps=6 format=3 uid="uid://cppqvlypbi5wh"]
 
 [ext_resource type="Script" path="res://src/player_ui.gd" id="1_ydabh"]
+[ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_16x0j"]
 [ext_resource type="PackedScene" uid="uid://dhm3gg86ro6vg" path="res://AlchemistCircle.tscn" id="2_bqdh4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8d6ff"]
+font = ExtResource("2_16x0j")
 font_size = 35
 font_color = Color(1.1, 1.1, 1.1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4yacj"]
-font_size = 18
+font = ExtResource("2_16x0j")
+font_size = 17
 font_color = Color(1.1, 1.1, 1.1, 1)
 
 [node name="PlayerUi" type="Control"]
@@ -60,10 +63,6 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ItemInventory" type="FlowContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -71,13 +70,19 @@ mouse_filter = 1
 
 [node name="AlchemistCircle" parent="MarginContainer/HBoxContainer/VBoxContainer/Control" instance=ExtResource("2_bqdh4")]
 custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 128.0
-offset_bottom = 128.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
 
 [node name="EndTurnButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_16x0j")
+theme_override_font_sizes/font_size = 20
 text = "End Turn"
