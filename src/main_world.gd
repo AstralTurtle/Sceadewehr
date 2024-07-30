@@ -41,7 +41,8 @@ func continue_turn():
     
     
 func process_damage(damage: int, team: int):
+    print('process damage', damage, team)
     if team == 0:
-        player1.health -= damage
+        player1.decrease_health(damage)
     elif team == 1:
-        player2.health -= damage
+        player2.decrease_health(damage)

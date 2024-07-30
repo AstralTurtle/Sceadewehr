@@ -9,6 +9,7 @@ class_name PlayerUI
 @onready var end_turn: Button = get_node("MarginContainer/HBoxContainer/VBoxContainer/EndTurnButton")
 @onready var game_board: GameBoard = get_tree().get_first_node_in_group("game_board_group")
 @onready var hover_mat: ShaderMaterial = load("res://assets/hover.material")
+var shielded: bool = false
 var essence_images = {
 	Tile.ElementType.AIR: load('res://assets/AirEssence.png'),
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
@@ -25,7 +26,7 @@ signal turn_complete()
 signal mouse_pressed()
 
 func _ready():
-	name_label.text = player_name
+	name_label.text = player_name + " HP - " + str(health)
 	var old_settings = name_label.label_settings
 	name_label.label_settings = old_settings.duplicate()
 	alchemist_crafter.send_back.connect(add_essence)
@@ -95,3 +96,14 @@ func skip():
 
 func _process(_delta):
 	hover_mat.set_shader_parameter("mouse_pos", game_board.get_local_mouse_position())
+
+func decrease_health(dmg: int):
+	print('decrease_health')
+	if shielded:
+		shielded = false
+		return
+	else:
+		print('what')
+		health -= dmg
+		name_label.text = player_name + " HP - " + str(health)
+		print(health)
