@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Sceadewehr"
-run/main_scene="res://main_world.tscn"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[aseprite]
+
+import/import_plugin/default_automatic_importer="Static Texture"
+
+[autoload]
+
+Globals="*res://src/Globals.gd"
 
 [display]
 
