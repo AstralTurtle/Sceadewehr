@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4gjlpymyavyj"]
+[gd_scene load_steps=18 format=3 uid="uid://c4gjlpymyavyj"]
 
 [ext_resource type="PackedScene" uid="uid://cppqvlypbi5wh" path="res://player_ui.tscn" id="1_c4g6l"]
 [ext_resource type="Script" path="res://src/main_world.gd" id="1_kop2j"]
@@ -10,6 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://b3xgyjro34kdf" path="res://assets/sfx/slide2.wav" id="8_fb1ex"]
 [ext_resource type="AudioStream" uid="uid://xlx28u8ggml8" path="res://assets/sfx/slide3.wav" id="9_to1xs"]
 [ext_resource type="AudioStream" uid="uid://bivdi3yx36vjq" path="res://assets/sfx/slide4.wav" id="10_kdc1u"]
+[ext_resource type="AudioStream" uid="uid://d3nptwh8ykov5" path="res://assets/sfx/hurt1.wav" id="11_8o8ai"]
+[ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="11_ygiqv"]
+[ext_resource type="AudioStream" uid="uid://b27stbnnpsnh1" path="res://assets/sfx/hurt2.wav" id="12_7nmot"]
+[ext_resource type="AudioStream" uid="uid://dggaepkmt0bsl" path="res://assets/sfx/hurt3.wav" id="13_gqgxw"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_etd6g"]
 streams_count = 4
@@ -22,7 +26,18 @@ stream_2/weight = 1.0
 stream_3/stream = ExtResource("10_kdc1u")
 stream_3/weight = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tatpf"]
+random_pitch = 1.5
+streams_count = 3
+stream_0/stream = ExtResource("11_8o8ai")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("12_7nmot")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("13_gqgxw")
+stream_2/weight = 1.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_q4rxe"]
+font = ExtResource("11_ygiqv")
 font_size = 50
 
 [node name="MainWorld" type="Control"]
@@ -86,7 +101,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 player_name = "Player 2"
 player = 1
-
 test_essences = Array[int]([0, 0])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -95,6 +109,9 @@ volume_db = -5.0
 
 [node name="SlideSFX" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_etd6g")
+
+[node name="HurtSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_tatpf")
 
 [node name="TurnChangeLabel" type="Label" parent="."]
 visible = false
@@ -112,4 +129,3 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Player 1's Turn!!"
 label_settings = SubResource("LabelSettings_q4rxe")
->>>>>>> refs/remotes/origin/master

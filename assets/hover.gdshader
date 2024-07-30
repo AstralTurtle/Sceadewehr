@@ -24,5 +24,4 @@ void fragment() {
 	float funny = (1.-(dist2*dist2*dist2))-0.5;
 	vec3 added_color = mix(vec3(0.), vec3(0.3, 0.3, 1.), step(0.2, funny));
 	COLOR = vec4(vec3(.5)+added_color, float(show)*funny);
-	//COLOR = vec4(vec3(dist2), 1.);
 }
