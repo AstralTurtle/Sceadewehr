@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2g3amtgoakl5"]
+
+[ext_resource type="Script" path="res://src/main_menu.gd" id="1_ue3ay"]
+[ext_resource type="AudioStream" uid="uid://bcbjassrpun3j" path="res://assets/music/SceadewehrLoop.wav" id="2_fy4rm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l87e4"]
+font_size = 100
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fekfx"]
+font_size = 25
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ue3ay")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2013, 0.203445, 0.33, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Sceadwehr"
+label_settings = SubResource("LabelSettings_l87e4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Spacer2" type="Control" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_fekfx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="ColorRect/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="ColorRect/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+min_value = -20.0
+max_value = 20.0
+tick_count = 20
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ColorRect"]
+stream = ExtResource("2_fy4rm")
