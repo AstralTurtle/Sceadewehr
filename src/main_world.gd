@@ -8,6 +8,8 @@ class_name MainWorld
 @onready var music: AudioStreamPlayer = $AudioStreamPlayer
 @onready var hurt_sfx: AudioStreamPlayer = $HurtSFX
 @onready var turn_change_label: Label = $TurnChangeLabel
+@onready var help: Button = $HelpButton
+@onready var recipe_book: Control = $RecipeBook
 @onready var end_screen: PackedScene = load("res://end_screen.tscn")
 var player1_active: bool = true
 
@@ -29,6 +31,8 @@ func _ready():
 	music.finished.connect(music.play)
 	music.volume_db = Globals.volume
 	turn_change_label.hide()
+	recipe_book.hide()
+	help.pressed.connect(func(): recipe_book.show())
 	
 
 func continue_turn():

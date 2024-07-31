@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4gjlpymyavyj"]
+[gd_scene load_steps=20 format=3 uid="uid://c4gjlpymyavyj"]
 
 [ext_resource type="PackedScene" uid="uid://cppqvlypbi5wh" path="res://player_ui.tscn" id="1_c4g6l"]
 [ext_resource type="Script" path="res://src/main_world.gd" id="1_kop2j"]
@@ -15,6 +15,7 @@
 [ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="11_ygiqv"]
 [ext_resource type="AudioStream" uid="uid://b27stbnnpsnh1" path="res://assets/sfx/hurt2.wav" id="12_7nmot"]
 [ext_resource type="AudioStream" uid="uid://dggaepkmt0bsl" path="res://assets/sfx/hurt3.wav" id="13_gqgxw"]
+[ext_resource type="PackedScene" uid="uid://cvja2fqevjtnn" path="res://recipe_book.tscn" id="16_8vodm"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_etd6g"]
 streams_count = 4
@@ -69,6 +70,7 @@ anchor_bottom = 1.0
 offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="PlayerUi" parent="HBoxContainer" instance=ExtResource("1_c4g6l")]
 layout_mode = 2
@@ -142,3 +144,35 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Player 1's Turn!!"
 label_settings = SubResource("LabelSettings_q4rxe")
+
+[node name="RecipeBook" parent="." instance=ExtResource("16_8vodm")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.337
+anchor_top = 0.093
+anchor_right = 0.726
+anchor_bottom = 0.919
+offset_left = -0.360016
+offset_top = -31.96
+offset_right = -498.28
+offset_bottom = -626.68
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="HelpButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -66.0
+offset_bottom = 66.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("11_ygiqv")
+theme_override_font_sizes/font_size = 30
+text = "?"

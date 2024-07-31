@@ -5,6 +5,7 @@ extends Control
 @onready var essence_line: PackedScene = load("res://essence_line.tscn")
 @onready var thing: VBoxContainer = $TabContainer/Recipies/MarginContainer/ScrollContainer/VBoxContainer
 @onready var essence: VBoxContainer = $TabContainer/Essences/MarginContainer/ScrollContainer/VBoxContainer
+@onready var close: Button = $Close
 
 var tile_images = {
 	Tile.ElementType.AIR: load('res://assets/Air.png'),
@@ -35,4 +36,8 @@ func _ready():
 		var it: ItemLine = essence_line.instantiate()
 		essence.add_child(it)
 		it.set_essence_line(tile_images[i], essence_images[i], Tile.ElementType.keys()[i])
+	close.pressed.connect(hide)
 		
+func _input(event):
+	if event.is_action_released("ui_cancel"):
+		hide()
