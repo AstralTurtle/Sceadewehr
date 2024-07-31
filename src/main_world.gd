@@ -12,6 +12,7 @@ class_name MainWorld
 @onready var recipe_book: Control = $RecipeBook
 @onready var end_screen: PackedScene = load("res://end_screen.tscn")
 var player1_active: bool = true
+var is_fs: bool = false
 
 var turn_counter = 0
 
@@ -33,6 +34,7 @@ func _ready():
 	turn_change_label.hide()
 	recipe_book.hide()
 	help.pressed.connect(func(): recipe_book.show())
+		
 	
 
 func continue_turn():
@@ -103,3 +105,8 @@ func get_player(num: int):
 		return player1
 	if num == 1:
 		return player2
+
+func _input(event):
+	if event.is_action_released("Fullscreen"):
+		is_fs = !is_fs
+		get_tree().root.get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if is_fs else Window.MODE_WINDOWED

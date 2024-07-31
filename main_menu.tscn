@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2g3amtgoakl5"]
+[gd_scene load_steps=9 format=3 uid="uid://b2g3amtgoakl5"]
 
 [ext_resource type="Script" path="res://src/main_menu.gd" id="1_ue3ay"]
 [ext_resource type="AudioStream" uid="uid://bcbjassrpun3j" path="res://assets/music/SceadewehrLoop.wav" id="2_fy4rm"]
 [ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_lf2rf"]
+[ext_resource type="Texture2D" uid="uid://s0godxg8vlyd" path="res://assets/fullscreen_icon.png.png" id="4_37aok"]
+[ext_resource type="Texture2D" uid="uid://vpf81ei22dv4" path="res://assets/fullscreen_icon_hover.png.png" id="5_bq30x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l87e4"]
 line_spacing = 5.0
@@ -130,3 +132,19 @@ layout_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fy4rm")
 volume_db = -5.0
+
+[node name="fullscreen" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("4_37aok")
+texture_pressed = ExtResource("5_bq30x")
+texture_hover = ExtResource("5_bq30x")
+stretch_mode = 0
