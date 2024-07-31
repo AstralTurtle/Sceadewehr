@@ -1,19 +1,26 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvja2fqevjtnn"]
+[gd_scene load_steps=22 format=3 uid="uid://cubnjq8xkg3u2"]
 
 [ext_resource type="Script" path="res://src/recipe_book.gd" id="1_5aqe4"]
 [ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="2_ppjsw"]
-[ext_resource type="Resource" uid="uid://bv02j8e3cocu4" path="res://recipies/ShadowSelf.tres" id="3_5jtfu"]
-[ext_resource type="Resource" uid="uid://c6rurrubghxnt" path="res://recipies/Cove.tres" id="3_gfq5p"]
-[ext_resource type="Resource" uid="uid://c1ycdymyhw0yu" path="res://recipies/Tsunami.tres" id="4_qenv2"]
-[ext_resource type="Resource" uid="uid://b38abftxto406" path="res://recipies/airrune.tres" id="6_ltify"]
-[ext_resource type="Resource" uid="uid://ctmje62e5lw3l" path="res://recipies/albedo.tres" id="7_0pn08"]
-[ext_resource type="Resource" uid="uid://71xejkr3s51i" path="res://recipies/brick.tres" id="8_ki041"]
-[ext_resource type="Resource" uid="uid://deabs5fb0y5b3" path="res://recipies/EarthRune.tres" id="9_85rni"]
-[ext_resource type="Resource" uid="uid://bb1li0qvfyfmu" path="res://recipies/fireRune.tres" id="10_gvidu"]
-[ext_resource type="Resource" uid="uid://msq6mlah5ri6" path="res://recipies/gust.tres" id="11_mfnwt"]
-[ext_resource type="Resource" uid="uid://d0ow1mibc8hgd" path="res://recipies/unstable_concoction.tres" id="12_yumk5"]
-[ext_resource type="Resource" uid="uid://cuv7e1egdssph" path="res://recipies/WaterRune.tres" id="13_nawd6"]
+[ext_resource type="Resource" uid="uid://drimnofyx4qml" path="res://recipies/ShadowSelf.tres" id="3_5jtfu"]
+[ext_resource type="Resource" uid="uid://sqi1ahljyns2" path="res://recipies/Cove.tres" id="3_gfq5p"]
+[ext_resource type="Resource" uid="uid://d3i8ic2pcxkwi" path="res://recipies/Tsunami.tres" id="4_qenv2"]
+[ext_resource type="Resource" uid="uid://pcg5spltajvg" path="res://recipies/airrune.tres" id="6_ltify"]
+[ext_resource type="Resource" uid="uid://t35egvtp35pv" path="res://recipies/albedo.tres" id="7_0pn08"]
+[ext_resource type="Resource" uid="uid://lf7gcofr706o" path="res://recipies/brick.tres" id="8_ki041"]
+[ext_resource type="Resource" uid="uid://duwyjjvwcut4p" path="res://recipies/EarthRune.tres" id="9_85rni"]
+[ext_resource type="Resource" uid="uid://c6m76j8ein5ar" path="res://recipies/fireRune.tres" id="10_gvidu"]
+[ext_resource type="Resource" uid="uid://cnv8r4t5o0rlw" path="res://recipies/gust.tres" id="11_mfnwt"]
+[ext_resource type="Resource" uid="uid://b3f208vh0a8cb" path="res://recipies/unstable_concoction.tres" id="12_yumk5"]
+[ext_resource type="Resource" uid="uid://gwdc4lqyx8bx" path="res://recipies/WaterRune.tres" id="13_nawd6"]
 [ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="14_3lv75"]
+[ext_resource type="Resource" uid="uid://dxseyu3lgws45" path="res://recipies/tailwind.tres" id="14_u6om3"]
+[ext_resource type="Resource" uid="uid://cenbecfl8h330" path="res://recipies/MudPuddle.tres" id="15_i5ebe"]
+[ext_resource type="Resource" uid="uid://rcs2qphx4213" path="res://recipies/Burst.tres" id="16_rwiyj"]
+[ext_resource type="Resource" uid="uid://dchkbvbwn1jas" path="res://recipies/rain_cloud.tres" id="17_dvxi5"]
+[ext_resource type="Resource" uid="uid://bw6i6knmtgrc7" path="res://recipies/imprison.tres" id="18_uvebe"]
+[ext_resource type="Resource" uid="uid://cfkx3e0dwfcup" path="res://recipies/suninabottle.tres" id="19_c0qby"]
+[ext_resource type="Resource" uid="uid://uqca4l61fv5c" path="res://recipies/sword.tres" id="20_hj0rb"]
 
 [node name="RecipeBook" type="Control"]
 layout_mode = 3
@@ -27,7 +34,7 @@ offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5aqe4")
-recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("2_ppjsw"), ExtResource("3_gfq5p"), ExtResource("3_5jtfu"), ExtResource("4_qenv2"), ExtResource("6_ltify"), ExtResource("7_0pn08"), ExtResource("8_ki041"), ExtResource("9_85rni"), ExtResource("10_gvidu"), ExtResource("11_mfnwt"), ExtResource("12_yumk5"), ExtResource("13_nawd6")])
+recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("2_ppjsw"), ExtResource("3_gfq5p"), ExtResource("3_5jtfu"), ExtResource("4_qenv2"), ExtResource("6_ltify"), ExtResource("7_0pn08"), ExtResource("8_ki041"), ExtResource("9_85rni"), ExtResource("10_gvidu"), ExtResource("11_mfnwt"), ExtResource("12_yumk5"), ExtResource("13_nawd6"), ExtResource("14_u6om3"), ExtResource("15_i5ebe"), ExtResource("16_rwiyj"), ExtResource("17_dvxi5"), ExtResource("18_uvebe"), ExtResource("19_c0qby"), ExtResource("20_hj0rb")])
 
 [node name="TabContainer" type="TabContainer" parent="."]
 custom_minimum_size = Vector2(500, 631)

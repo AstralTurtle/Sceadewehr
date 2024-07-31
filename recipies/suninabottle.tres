@@ -9,4 +9,4 @@ script = ExtResource("1_6vjk4")
 ingridients = Array[int]([2, 5])
 item_scene = ExtResource("1_300in")
 item_thumbnail = ExtResource("2_32rcs")
-recipe_text = ""
+recipe_text = "Destroy 3x3 square of clones "

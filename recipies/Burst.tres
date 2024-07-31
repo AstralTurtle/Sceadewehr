@@ -9,4 +9,4 @@ script = ExtResource("1_cxgwt")
 ingridients = Array[int]([0, 5])
 item_scene = ExtResource("1_dy0xx")
 item_thumbnail = ExtResource("2_i8a67")
-recipe_text = ""
+recipe_text = "Choose a 3x3 area, ALL clones in the area are pushed away from the center"

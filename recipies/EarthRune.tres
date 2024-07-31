@@ -9,4 +9,4 @@ script = ExtResource("3_asq26")
 ingridients = Array[int]([3, 4])
 item_scene = ExtResource("1_6oum3")
 item_thumbnail = ExtResource("2_ldfvj")
-recipe_text = ""
+recipe_text = "Snare (Rune) - target is stunned"

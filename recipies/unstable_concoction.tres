@@ -9,4 +9,4 @@ script = ExtResource("1_d34i7")
 ingridients = Array[int]([5, 5])
 item_scene = ExtResource("1_ql43j")
 item_thumbnail = ExtResource("2_xu4h4")
-recipe_text = ""
+recipe_text = "Deal 1 damage to both players"

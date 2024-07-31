@@ -9,4 +9,4 @@ script = ExtResource("1_e4h4m")
 ingridients = Array[int]([0, 2])
 item_scene = ExtResource("1_tekub")
 item_thumbnail = ExtResource("2_4hpkd")
-recipe_text = ""
+recipe_text = "Push allied clones in the back 4 row forward 2"

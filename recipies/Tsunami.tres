@@ -9,4 +9,4 @@ script = ExtResource("3_ldliw")
 ingridients = Array[int]([0, 1])
 item_scene = ExtResource("1_1la68")
 item_thumbnail = ExtResource("2_a81im")
-recipe_text = ""
+recipe_text = "Push clones in the front half of the board backwards"

@@ -9,4 +9,4 @@ script = ExtResource("3_qcwb7")
 ingridients = Array[int]([1, 1])
 item_scene = ExtResource("1_bb6ea")
 item_thumbnail = ExtResource("2_2h7lg")
-recipe_text = ""
+recipe_text = "Defend against 1 instance of damage"

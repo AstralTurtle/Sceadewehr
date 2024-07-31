@@ -9,4 +9,4 @@ script = ExtResource("1_xb6oi")
 ingridients = Array[int]([3, 3])
 item_scene = ExtResource("1_kqavw")
 item_thumbnail = ExtResource("2_fdms0")
-recipe_text = ""
+recipe_text = "Build a wall"

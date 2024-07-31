@@ -9,4 +9,4 @@ script = ExtResource("1_bx4gq")
 ingridients = Array[int]([1, 4])
 item_scene = ExtResource("1_it8ig")
 item_thumbnail = ExtResource("2_o0gyu")
-recipe_text = ""
+recipe_text = "Puddle= (Rune) - target is Damp"

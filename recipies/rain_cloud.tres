@@ -9,4 +9,4 @@ script = ExtResource("1_bkgfw")
 ingridients = Array[int]([1, 5])
 item_scene = ExtResource("1_sgfw3")
 item_thumbnail = ExtResource("2_oaml5")
-recipe_text = ""
+recipe_text = "Rain Cloud - make a 3x3 square of clones Damp"

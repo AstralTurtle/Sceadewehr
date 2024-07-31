@@ -9,4 +9,4 @@ script = ExtResource("1_k7vep")
 ingridients = Array[int]([6, 6])
 item_scene = ExtResource("1_wdnsn")
 item_thumbnail = ExtResource("2_hl5w8")
-recipe_text = ""
+recipe_text = "Choose a new essence"

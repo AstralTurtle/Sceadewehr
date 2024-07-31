@@ -9,4 +9,4 @@ script = ExtResource("1_iqg2t")
 ingridients = Array[int]([0, 4])
 item_scene = ExtResource("1_x61sy")
 item_thumbnail = ExtResource("2_cogen")
-recipe_text = ""
+recipe_text = "(Rune) - Push target back 2 squares"

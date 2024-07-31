@@ -9,4 +9,4 @@ script = ExtResource("1_xaudw")
 ingridients = Array[int]([4, 4])
 item_scene = ExtResource("1_p0kyl")
 item_thumbnail = ExtResource("2_2dg7r")
-recipe_text = ""
+recipe_text = "Spawn a clone"

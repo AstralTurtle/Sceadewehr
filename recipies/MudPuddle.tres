@@ -9,4 +9,4 @@ script = ExtResource("1_y4kbx")
 ingridients = Array[int]([1, 3])
 item_scene = ExtResource("1_huq1e")
 item_thumbnail = ExtResource("2_rf4ih")
-recipe_text = ""
+recipe_text = "Mud Puddle - Stun clones"
