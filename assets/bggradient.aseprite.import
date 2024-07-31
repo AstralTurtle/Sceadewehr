@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://dbpr3llupthiq"
+path="res://.godot/imported/bggradient.aseprite-4da0b6673cb2101edc65d0520d057dd0.res"
+
+[deps]
+
+source_file="res://assets/bggradient.aseprite"
+dest_files=["res://.godot/imported/bggradient.aseprite-4da0b6673cb2101edc65d0520d057dd0.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

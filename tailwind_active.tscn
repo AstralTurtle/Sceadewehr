@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdhjsik8ac8dh"]
+
+[ext_resource type="PackedScene" uid="uid://dwh0w7dljjdnq" path="res://items/src/tsunami_active.tscn" id="1_pf8dd"]
+[ext_resource type="Script" path="res://TailwindActive.gd" id="2_nybln"]
+[ext_resource type="Texture2D" uid="uid://b6n6uwse5x4he" path="res://assets/items/Gust.png" id="3_dnrf1"]
+
+[sub_resource type="Gradient" id="Gradient_nnfi7"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4biuk"]
+gradient = SubResource("Gradient_nnfi7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o14s1"]
+lifetime_randomness = 0.14
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(329, 177, 1)
+gravity = Vector3(0, 98, 0)
+color_initial_ramp = SubResource("GradientTexture1D_4biuk")
+
+[node name="TsunamiActive" instance=ExtResource("1_pf8dd")]
+script = ExtResource("2_nybln")
+
+[node name="GPUParticles2D" parent="." index="1"]
+process_material = SubResource("ParticleProcessMaterial_o14s1")
+texture = ExtResource("3_dnrf1")
