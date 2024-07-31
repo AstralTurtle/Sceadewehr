@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://c6m76j8ein5ar"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://bb1li0qvfyfmu"]
 
-[ext_resource type="PackedScene" uid="uid://b61o2g4ytu1e5" path="res://items/FireRune.tscn" id="1_g3fvh"]
+[ext_resource type="PackedScene" path="res://items/FireRune.tscn" id="1_g3fvh"]
 [ext_resource type="Texture2D" uid="uid://c86v0doifklqs" path="res://assets/items/FireRune.png" id="2_wmwlj"]
 [ext_resource type="Script" path="res://src/Recipe.gd" id="3_b2hib"]
 
@@ -9,3 +9,4 @@ script = ExtResource("3_b2hib")
 ingridients = Array[int]([2, 4])
 item_scene = ExtResource("1_g3fvh")
 item_thumbnail = ExtResource("2_wmwlj")
+recipe_text = "(Rune) - Target is destroyed"

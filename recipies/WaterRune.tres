@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://gwdc4lqyx8bx"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://cuv7e1egdssph"]
 
 [ext_resource type="Script" path="res://src/Recipe.gd" id="1_bx4gq"]
-[ext_resource type="PackedScene" uid="uid://cyvhgh5j2i8g" path="res://items/WaterRune.tscn" id="1_it8ig"]
+[ext_resource type="PackedScene" path="res://items/WaterRune.tscn" id="1_it8ig"]
 [ext_resource type="Texture2D" uid="uid://bxu1rkju25eeq" path="res://assets/items/WaterRune.png" id="2_o0gyu"]
 
 [resource]
@@ -9,3 +9,4 @@ script = ExtResource("1_bx4gq")
 ingridients = Array[int]([1, 4])
 item_scene = ExtResource("1_it8ig")
 item_thumbnail = ExtResource("2_o0gyu")
+recipe_text = "Puddle= (Rune) - target is Damp"

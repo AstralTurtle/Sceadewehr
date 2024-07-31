@@ -15,7 +15,12 @@ var essence_images = {
 	Tile.ElementType.MERCURY: load('res://assets/MercuryEssence.png')
 }
 
-func set_line(i1: Tile.ElementType, i2: Tile.ElementType, output_str: String):
+func set_item_line(i1: Tile.ElementType, i2: Tile.ElementType, output_str: String):
 	item1Tex.texture = essence_images[i1]
 	item2Tex.texture = essence_images[i2]
+	output.text = output_str
+
+func set_essence_line(i1: Texture, i2: Texture, output_str: String):
+	item1Tex.texture = i1
+	item2Tex.texture = i2
 	output.text = output_str

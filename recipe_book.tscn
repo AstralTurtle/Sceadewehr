@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvja2fqevjtnn"]
+[gd_scene load_steps=15 format=3 uid="uid://cvja2fqevjtnn"]
 
 [ext_resource type="Script" path="res://src/recipe_book.gd" id="1_5aqe4"]
 [ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="2_ppjsw"]
 [ext_resource type="Resource" uid="uid://bv02j8e3cocu4" path="res://recipies/ShadowSelf.tres" id="3_5jtfu"]
 [ext_resource type="Resource" uid="uid://c6rurrubghxnt" path="res://recipies/Cove.tres" id="3_gfq5p"]
 [ext_resource type="Resource" uid="uid://c1ycdymyhw0yu" path="res://recipies/Tsunami.tres" id="4_qenv2"]
+[ext_resource type="Resource" uid="uid://b38abftxto406" path="res://recipies/airrune.tres" id="6_ltify"]
+[ext_resource type="Resource" uid="uid://ctmje62e5lw3l" path="res://recipies/albedo.tres" id="7_0pn08"]
+[ext_resource type="Resource" uid="uid://71xejkr3s51i" path="res://recipies/brick.tres" id="8_ki041"]
+[ext_resource type="Resource" uid="uid://deabs5fb0y5b3" path="res://recipies/EarthRune.tres" id="9_85rni"]
+[ext_resource type="Resource" uid="uid://bb1li0qvfyfmu" path="res://recipies/fireRune.tres" id="10_gvidu"]
+[ext_resource type="Resource" uid="uid://msq6mlah5ri6" path="res://recipies/gust.tres" id="11_mfnwt"]
+[ext_resource type="Resource" uid="uid://d0ow1mibc8hgd" path="res://recipies/unstable_concoction.tres" id="12_yumk5"]
+[ext_resource type="Resource" uid="uid://cuv7e1egdssph" path="res://recipies/WaterRune.tres" id="13_nawd6"]
+[ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="14_3lv75"]
 
 [node name="RecipeBook" type="Control"]
 layout_mode = 3
@@ -12,30 +21,28 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 340.0
-offset_top = 60.0
+offset_top = 29.0
 offset_right = -440.0
 offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5aqe4")
-recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("2_ppjsw"), ExtResource("3_gfq5p"), ExtResource("3_5jtfu"), ExtResource("4_qenv2")])
+recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("2_ppjsw"), ExtResource("3_gfq5p"), ExtResource("3_5jtfu"), ExtResource("4_qenv2"), ExtResource("6_ltify"), ExtResource("7_0pn08"), ExtResource("8_ki041"), ExtResource("9_85rni"), ExtResource("10_gvidu"), ExtResource("11_mfnwt"), ExtResource("12_yumk5"), ExtResource("13_nawd6")])
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -300.0
-offset_right = 250.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TabContainer" type="TabContainer" parent="."]
+custom_minimum_size = Vector2(500, 631)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/icon_separation = 0
+theme_override_fonts/font = ExtResource("14_3lv75")
+theme_override_font_sizes/font_size = 20
+
+[node name="Recipies" type="ColorRect" parent="TabContainer"]
+layout_mode = 2
 color = Color(0.51, 0.405875, 0.2601, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Recipies"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,9 +54,33 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Recipies/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Recipies/MarginContainer/ScrollContainer"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+
+[node name="Essences" type="ColorRect" parent="TabContainer"]
+visible = false
+layout_mode = 2
+color = Color(0.51, 0.405875, 0.2601, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Essences"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Essences/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Essences/MarginContainer/ScrollContainer"]
 custom_minimum_size = Vector2(480, 0)
 layout_mode = 2
