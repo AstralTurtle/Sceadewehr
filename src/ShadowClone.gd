@@ -30,6 +30,10 @@ func move_forward():
 func move_backwards(steps: int):
 	target = Vector2(position.x, position.y - grid_interval * steps)
 
+func apply_stun():
+	target = position
+	stunned = true
+
 func destroy():
 	if !damp:
 		do_damage.emit(damage / 2, (team + 1) % 2)

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://pcg5spltajvg"]
+
+[ext_resource type="Script" path="res://src/Recipe.gd" id="1_iqg2t"]
+[ext_resource type="PackedScene" uid="uid://dpa734qvi8xd3" path="res://items/AirRune.tscn" id="1_x61sy"]
+[ext_resource type="Texture2D" uid="uid://comtjkwt80yjn" path="res://assets/items/AirRune.png" id="2_cogen"]
+
+[resource]
+script = ExtResource("1_iqg2t")
+ingridients = Array[int]([0, 4])
+item_scene = ExtResource("1_x61sy")
+item_thumbnail = ExtResource("2_cogen")
