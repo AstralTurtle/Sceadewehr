@@ -9,3 +9,4 @@ script = ExtResource("1_xbaot")
 ingridients = Array[int]([2, 2])
 item_scene = ExtResource("1_kw4ib")
 item_thumbnail = ExtResource("2_qcwn6")
+recipe_text = "Flare - Destroy 1 Shadow Clone"

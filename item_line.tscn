@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbxbsfa0w41qd"]
+
+[ext_resource type="Script" path="res://item_line.gd" id="1_xjq2r"]
+[ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_nhbnv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oy3s2"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_abqod"]
+font = ExtResource("3_nhbnv")
+font_size = 10
+
+[node name="ItemLine" type="HBoxContainer"]
+size_flags_vertical = 0
+script = ExtResource("1_xjq2r")
+
+[node name="Item1" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = " + "
+label_settings = SubResource("LabelSettings_oy3s2")
+
+[node name="Item2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = " = "
+label_settings = SubResource("LabelSettings_oy3s2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Output" type="Label" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_abqod")
+autowrap_mode = 3

@@ -4,6 +4,7 @@ class_name Recipe
 @export var ingridients: Array[Tile.ElementType]
 @export var item_scene: PackedScene
 @export var item_thumbnail: Texture2D
+@export var recipe_text: String
 # @export var result: Result type not defined yet
 
 func is_valid(proposed: Array[Tile.ElementType]) -> bool:

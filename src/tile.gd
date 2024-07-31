@@ -13,7 +13,7 @@ var to_clear: bool = false
 @onready var test: Texture = load('res://icon.svg')
 
 # set in editor
-@export var tile_images = {
+var tile_images = {
 	ElementType.AIR: load('res://assets/Air.png'),
 	ElementType.WATER: load('res://assets/Water.png'),
 	ElementType.FIRE: load('res://assets/Fire.png'),

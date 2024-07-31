@@ -14,7 +14,7 @@ class_name PlayerUI
 @onready var hover_mat: ShaderMaterial = load("res://assets/hover.material")
 @export var test_essences: Array[Tile.ElementType] = []
 var shielded: bool = false
-var essence_images = {
+@export var essence_images = {
 	Tile.ElementType.AIR: load('res://assets/AirEssence.png'),
 	Tile.ElementType.WATER: load('res://assets/WaterEssence.png'),
 	Tile.ElementType.FIRE: load('res://assets/FireEssence.png'),
