@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://tn3rt4c36vad"]
+
+[ext_resource type="PackedScene" uid="uid://dcvo45plmn1nu" path="res://items/test_item.tscn" id="1_aewke"]
+[ext_resource type="Script" path="res://Burst.gd" id="2_rcavq"]
+[ext_resource type="Texture2D" uid="uid://cjkkhm7us55ne" path="res://assets/AirEssence.png" id="3_p3s5q"]
+[ext_resource type="Texture2D" uid="uid://bgcc6u74j2pmq" path="res://assets/items/burst.png" id="3_vg7er"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c4ol"]
+size = Vector2(208, 208)
+
+[sub_resource type="Curve" id="Curve_r0na1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_hqo8o"]
+curve = SubResource("Curve_r0na1")
+
+[sub_resource type="Curve" id="Curve_14fts"]
+max_value = 3.0
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_v3fat"]
+curve = SubResource("Curve_14fts")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dqlby"]
+lifetime_randomness = 0.15
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(75, 75, 1)
+direction = Vector3(1, 1, 0)
+spread = 180.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+gravity = Vector3(0, 0, 0)
+linear_accel_max = 100.0
+scale_min = 0.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_hqo8o")
+scale_over_velocity_max = 10.0
+scale_over_velocity_curve = SubResource("CurveTexture_v3fat")
+
+[node name="TestItem" instance=ExtResource("1_aewke")]
+script = ExtResource("2_rcavq")
+push_force = 20.0
+item_name = "Burst"
+placeable = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_vg7er")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_5c4ol")
+
+[node name="GPUParticles2D" parent="." index="2"]
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_dqlby")
+texture = ExtResource("3_p3s5q")
+lifetime = 2.0
+explosiveness = 0.3

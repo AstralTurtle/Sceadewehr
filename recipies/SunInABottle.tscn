@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ygrdr3qeanxd"]
+
+[ext_resource type="PackedScene" uid="uid://bv15o7jlecuyl" path="res://items/flare.tscn" id="1_u2hol"]
+[ext_resource type="Texture2D" uid="uid://rtypfjwc8rcx" path="res://assets/items/suninabottle.png" id="2_svm81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36lap"]
+size = Vector2(208, 208)
+
+[node name="TestItem" instance=ExtResource("1_u2hol")]
+item_name = "SunInABottle"
+texture = ExtResource("2_svm81")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_svm81")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_36lap")

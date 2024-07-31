@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://ctmje62e5lw3l"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://t35egvtp35pv"]
 
 [ext_resource type="Script" path="res://src/Recipe.gd" id="1_k7vep"]
-[ext_resource type="PackedScene" path="res://items/PureEssence.tscn" id="1_wdnsn"]
+[ext_resource type="PackedScene" uid="uid://c1kkxq1d8kbi8" path="res://items/PureEssence.tscn" id="1_wdnsn"]
 [ext_resource type="Texture2D" uid="uid://cc3jpg2xw6gqo" path="res://assets/items/albedo.png" id="2_hl5w8"]
 
 [resource]
@@ -9,4 +9,4 @@ script = ExtResource("1_k7vep")
 ingridients = Array[int]([6, 6])
 item_scene = ExtResource("1_wdnsn")
 item_thumbnail = ExtResource("2_hl5w8")
-recipe_text = "Pure Essence - Wildcard/Give's player a different essence."
+recipe_text = ""

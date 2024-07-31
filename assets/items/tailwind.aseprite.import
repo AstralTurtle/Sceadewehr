@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://bdgo1vuq0vsuk"
+path="res://.godot/imported/tailwind.aseprite-dc19d950d31a59a29026b589f7f6b230.res"
+
+[deps]
+
+source_file="res://assets/items/tailwind.aseprite"
+dest_files=["res://.godot/imported/tailwind.aseprite-dc19d950d31a59a29026b589f7f6b230.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

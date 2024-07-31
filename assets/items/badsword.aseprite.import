@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://p3qso0lbk8su"
+path="res://.godot/imported/badsword.aseprite-63d5532bdf7c09525435caf99e47b25b.res"
+
+[deps]
+
+source_file="res://assets/items/badsword.aseprite"
+dest_files=["res://.godot/imported/badsword.aseprite-63d5532bdf7c09525435caf99e47b25b.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://cq6gw56voqyk5"
+path="res://.godot/imported/suninabottle.aseprite-400b401816bfef7975d6561b55e0b735.res"
+
+[deps]
+
+source_file="res://assets/items/suninabottle.aseprite"
+dest_files=["res://.godot/imported/suninabottle.aseprite-400b401816bfef7975d6561b55e0b735.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

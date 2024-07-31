@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhm3gg86ro6vg"]
+[gd_scene load_steps=22 format=3 uid="uid://dhm3gg86ro6vg"]
 
 [ext_resource type="Texture2D" uid="uid://bra8xi6qr7t4y" path="res://assets/TransmutationCircle.png" id="1_rj6li"]
 [ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_csryf"]
@@ -14,6 +14,13 @@
 [ext_resource type="Resource" uid="uid://d3i8ic2pcxkwi" path="res://recipies/Tsunami.tres" id="12_scc73"]
 [ext_resource type="Resource" uid="uid://b3f208vh0a8cb" path="res://recipies/unstable_concoction.tres" id="13_3a6xf"]
 [ext_resource type="Resource" uid="uid://gwdc4lqyx8bx" path="res://recipies/WaterRune.tres" id="14_1ppax"]
+[ext_resource type="Resource" uid="uid://dxseyu3lgws45" path="res://recipies/tailwind.tres" id="15_3ff37"]
+[ext_resource type="Resource" uid="uid://cenbecfl8h330" path="res://recipies/MudPuddle.tres" id="16_ug2cc"]
+[ext_resource type="Resource" uid="uid://rcs2qphx4213" path="res://recipies/Burst.tres" id="17_rfqdj"]
+[ext_resource type="Resource" uid="uid://dchkbvbwn1jas" path="res://recipies/rain_cloud.tres" id="18_emdn3"]
+[ext_resource type="Resource" uid="uid://bw6i6knmtgrc7" path="res://recipies/imprison.tres" id="19_y2n2o"]
+[ext_resource type="Resource" uid="uid://cfkx3e0dwfcup" path="res://recipies/suninabottle.tres" id="20_2xg44"]
+[ext_resource type="Resource" uid="uid://uqca4l61fv5c" path="res://recipies/sword.tres" id="21_avhwd"]
 
 [node name="AlchemistCircle" type="TextureRect"]
 anchors_preset = -1
@@ -25,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rj6li")
 script = ExtResource("2_csryf")
-recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("3_36jho"), ExtResource("4_a73kq"), ExtResource("5_0tyok"), ExtResource("6_ynvsd"), ExtResource("7_pdbvk"), ExtResource("8_h54yv"), ExtResource("9_x4o3h"), ExtResource("10_jsf0g"), ExtResource("11_thjj5"), ExtResource("12_scc73"), ExtResource("13_3a6xf"), ExtResource("14_1ppax")])
+recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("3_36jho"), ExtResource("4_a73kq"), ExtResource("5_0tyok"), ExtResource("6_ynvsd"), ExtResource("7_pdbvk"), ExtResource("8_h54yv"), ExtResource("9_x4o3h"), ExtResource("10_jsf0g"), ExtResource("11_thjj5"), ExtResource("12_scc73"), ExtResource("13_3a6xf"), ExtResource("14_1ppax"), ExtResource("15_3ff37"), ExtResource("16_ug2cc"), ExtResource("17_rfqdj"), ExtResource("18_emdn3"), ExtResource("19_y2n2o"), ExtResource("20_2xg44"), ExtResource("21_avhwd")])
 
 [node name="Slot1" type="Button" parent="."]
 layout_mode = 1

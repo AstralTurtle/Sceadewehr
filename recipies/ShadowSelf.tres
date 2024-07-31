@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://bv02j8e3cocu4"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://drimnofyx4qml"]
 
-[ext_resource type="PackedScene" path="res://items/ShadowSelf.tscn" id="1_p0kyl"]
+[ext_resource type="PackedScene" uid="uid://72gjx076so7y" path="res://items/ShadowSelf.tscn" id="1_p0kyl"]
 [ext_resource type="Script" path="res://src/Recipe.gd" id="1_xaudw"]
 [ext_resource type="Texture2D" uid="uid://4jj1pa2gpje" path="res://assets/items/ShadowSelf.png" id="2_2dg7r"]
 
@@ -9,4 +9,4 @@ script = ExtResource("1_xaudw")
 ingridients = Array[int]([4, 4])
 item_scene = ExtResource("1_p0kyl")
 item_thumbnail = ExtResource("2_2dg7r")
-recipe_text = "Shadow Self - Spawn a clone"
+recipe_text = ""

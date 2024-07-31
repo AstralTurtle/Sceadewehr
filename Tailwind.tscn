@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://i5klp4yr3a2i"]
+
+[ext_resource type="Script" path="res://items/src/tailwind.gd" id="1_40c41"]
+[ext_resource type="PackedScene" uid="uid://cdhjsik8ac8dh" path="res://tailwind_active.tscn" id="2_1qe75"]
+[ext_resource type="Texture2D" uid="uid://clebn6sjmbw0i" path="res://assets/items/tailwind.png" id="3_ouxhb"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_40c41")
+tailwindScene = ExtResource("2_1qe75")
+item_name = "Tailwind"
+texture = ExtResource("3_ouxhb")

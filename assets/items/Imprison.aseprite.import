@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://r6be6wwiqny6"
+path="res://.godot/imported/Imprison.aseprite-87b6531e770098bb579e550518f00aca.res"
+
+[deps]
+
+source_file="res://assets/items/Imprison.aseprite"
+dest_files=["res://.godot/imported/Imprison.aseprite-87b6531e770098bb579e550518f00aca.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

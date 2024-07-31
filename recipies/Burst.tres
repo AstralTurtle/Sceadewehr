@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://rcs2qphx4213"]
+
+[ext_resource type="Script" path="res://src/Recipe.gd" id="1_cxgwt"]
+[ext_resource type="PackedScene" uid="uid://tn3rt4c36vad" path="res://items/Burst.tscn" id="1_dy0xx"]
+[ext_resource type="Texture2D" uid="uid://bgcc6u74j2pmq" path="res://assets/items/burst.png" id="2_i8a67"]
+
+[resource]
+script = ExtResource("1_cxgwt")
+ingridients = Array[int]([0, 5])
+item_scene = ExtResource("1_dy0xx")
+item_thumbnail = ExtResource("2_i8a67")
+recipe_text = ""

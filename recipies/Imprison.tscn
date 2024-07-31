@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu5kurlg11lex"]
+
+[ext_resource type="Script" path="res://recipies/Imprison.gd" id="1_wrf8h"]
+[ext_resource type="Texture2D" uid="uid://ub41foxmn1" path="res://assets/items/Imprison.png" id="2_5cu5q"]
+[ext_resource type="Texture2D" uid="uid://dw1nnhoh0wnft" path="res://assets/items/brick_tile.png" id="2_14fyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukxs6"]
+size = Vector2(32, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axbxv"]
+size = Vector2(2, 32)
+
+[node name="BaseItem" type="Node2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_wrf8h")
+item_name = "Imprison"
+is_on_enemy = false
+delayed_action = true
+texture = ExtResource("2_5cu5q")
+
+[node name="BrickTile2" type="Sprite2D" parent="."]
+position = Vector2(24, 8)
+texture = ExtResource("2_14fyi")
+
+[node name="BrickTile" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("2_14fyi")
+
+[node name="BrickTile3" type="Sprite2D" parent="."]
+position = Vector2(24, 8)
+rotation = 1.5708
+texture = ExtResource("2_14fyi")
+
+[node name="BrickTile5" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+rotation = 1.5708
+texture = ExtResource("2_14fyi")
+
+[node name="BrickTile4" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+rotation = -3.14159
+texture = ExtResource("2_14fyi")
+
+[node name="BrickTile6" type="Sprite2D" parent="."]
+position = Vector2(8, 24)
+rotation = -3.14159
+texture = ExtResource("2_14fyi")
+
+[node name="BrickTile7" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+rotation = 4.71239
+texture = ExtResource("2_14fyi")
+
+[node name="BrickTile8" type="Sprite2D" parent="."]
+position = Vector2(8, 24)
+rotation = 4.71239
+texture = ExtResource("2_14fyi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(16, 1)
+shape = SubResource("RectangleShape2D_ukxs6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(16, 31)
+shape = SubResource("RectangleShape2D_ukxs6")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1, 16)
+shape = SubResource("RectangleShape2D_axbxv")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(31, 16)
+shape = SubResource("RectangleShape2D_axbxv")

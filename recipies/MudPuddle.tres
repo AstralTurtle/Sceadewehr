@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://cenbecfl8h330"]
+
+[ext_resource type="PackedScene" uid="uid://c7u2eixh8xtkf" path="res://items/MudPuddle.tscn" id="1_huq1e"]
+[ext_resource type="Script" path="res://src/Recipe.gd" id="1_y4kbx"]
+[ext_resource type="Texture2D" uid="uid://4ef8f8giyxfg" path="res://assets/items/mudpuddle.png" id="2_rf4ih"]
+
+[resource]
+script = ExtResource("1_y4kbx")
+ingridients = Array[int]([1, 3])
+item_scene = ExtResource("1_huq1e")
+item_thumbnail = ExtResource("2_rf4ih")
+recipe_text = ""

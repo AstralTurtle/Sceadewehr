@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://dge35j2ca4v4k"
+path="res://.godot/imported/burst.aseprite-06377c4c9184344ca47cddba1a6cce96.res"
+
+[deps]
+
+source_file="res://assets/items/burst.aseprite"
+dest_files=["res://.godot/imported/burst.aseprite-06377c4c9184344ca47cddba1a6cce96.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

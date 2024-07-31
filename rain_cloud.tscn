@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://1h8rj38bcluu"]
+
+[ext_resource type="PackedScene" uid="uid://dcvo45plmn1nu" path="res://items/test_item.tscn" id="1_c8vkt"]
+[ext_resource type="Texture2D" uid="uid://x22yph8iucdu" path="res://assets/WaterEssence.png" id="2_ftjsh"]
+[ext_resource type="Script" path="res://rain_cloud.gd" id="2_gi8x6"]
+[ext_resource type="Texture2D" uid="uid://crabqvu858ae1" path="res://assets/items/rain_cloud.png" id="3_gk16h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3rxd"]
+size = Vector2(208, 208)
+
+[sub_resource type="Curve" id="Curve_n7dnk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vcydy"]
+curve = SubResource("Curve_n7dnk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ixxl5"]
+lifetime_randomness = 0.14
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+gravity = Vector3(0, 98, 0)
+scale_min = 0.0
+scale_max = 2.55
+scale_curve = SubResource("CurveTexture_vcydy")
+
+[node name="TestItem" instance=ExtResource("1_c8vkt")]
+script = ExtResource("2_gi8x6")
+item_name = "Rain Cloud"
+placeable = 2
+texture = ExtResource("3_gk16h")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_gk16h")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_r3rxd")
+
+[node name="GPUParticles2D" parent="." index="2"]
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_ixxl5")
+texture = ExtResource("2_ftjsh")
+lifetime = 1.5

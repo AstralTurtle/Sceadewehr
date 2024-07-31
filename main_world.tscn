@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://src/GameBoard.gd" id="2_wvq78"]
 [ext_resource type="Material" uid="uid://dvgxvna08ep0b" path="res://assets/hover.material" id="3_marsv"]
 [ext_resource type="Script" path="res://src/CloneBoard.gd" id="3_uxvh6"]
-[ext_resource type="AudioStream" uid="uid://bcbjassrpun3j" path="res://assets/music/SceadewehrLoop.wav" id="6_st4kj"]
+[ext_resource type="AudioStream" uid="uid://whsccjq3rl53" path="res://assets/music/SceadewehrLoop.wav" id="6_st4kj"]
 [ext_resource type="AudioStream" uid="uid://vw88bvpxf5a1" path="res://assets/sfx/slide1.wav" id="7_fyixs"]
 [ext_resource type="AudioStream" uid="uid://b3xgyjro34kdf" path="res://assets/sfx/slide2.wav" id="8_fb1ex"]
 [ext_resource type="AudioStream" uid="uid://xlx28u8ggml8" path="res://assets/sfx/slide3.wav" id="9_to1xs"]
@@ -15,7 +15,7 @@
 [ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="11_ygiqv"]
 [ext_resource type="AudioStream" uid="uid://b27stbnnpsnh1" path="res://assets/sfx/hurt2.wav" id="12_7nmot"]
 [ext_resource type="AudioStream" uid="uid://dggaepkmt0bsl" path="res://assets/sfx/hurt3.wav" id="13_gqgxw"]
-[ext_resource type="PackedScene" uid="uid://cvja2fqevjtnn" path="res://recipe_book.tscn" id="16_8vodm"]
+[ext_resource type="PackedScene" path="res://recipe_book.tscn" id="16_8vodm"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_etd6g"]
 streams_count = 4
@@ -76,7 +76,7 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_horizontal = 3
 player_name = "Player 1"
-test_essences = Array[int]([0, 4, 1, 2, 3, 4])
+test_essences = Array[int]([0, 4, 1, 2, 3, 4, 5, 3])
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
 layout_mode = 2
