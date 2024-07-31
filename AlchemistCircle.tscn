@@ -2,17 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://bra8xi6qr7t4y" path="res://assets/TransmutationCircle.png" id="1_rj6li"]
 [ext_resource type="Script" path="res://src/AlchemistCircle.gd" id="2_csryf"]
-[ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="4_t2fa1"]
-[ext_resource type="Resource" uid="uid://sqi1ahljyns2" path="res://recipies/Cove.tres" id="5_w5h1e"]
-[ext_resource type="Resource" uid="uid://d3i8ic2pcxkwi" path="res://recipies/Tsunami.tres" id="6_mdxkx"]
-[ext_resource type="Resource" uid="uid://drimnofyx4qml" path="res://recipies/ShadowSelf.tres" id="7_lap4k"]
-[ext_resource type="Resource" uid="uid://lf7gcofr706o" path="res://recipies/brick.tres" id="8_trwkf"]
-[ext_resource type="Resource" uid="uid://t35egvtp35pv" path="res://recipies/albedo.tres" id="9_tuq6n"]
-[ext_resource type="Resource" uid="uid://b3f208vh0a8cb" path="res://recipies/unstable_concoction.tres" id="10_gmweh"]
-[ext_resource type="Resource" uid="uid://pcg5spltajvg" path="res://recipies/airrune.tres" id="11_ktj8b"]
-[ext_resource type="Resource" uid="uid://c6m76j8ein5ar" path="res://recipies/fireRune.tres" id="12_l15en"]
-[ext_resource type="Resource" uid="uid://duwyjjvwcut4p" path="res://recipies/EarthRune.tres" id="13_6dn64"]
-[ext_resource type="Resource" uid="uid://gwdc4lqyx8bx" path="res://recipies/WaterRune.tres" id="14_vjgab"]
+[ext_resource type="Resource" uid="uid://pcg5spltajvg" path="res://recipies/airrune.tres" id="3_36jho"]
+[ext_resource type="Resource" uid="uid://t35egvtp35pv" path="res://recipies/albedo.tres" id="4_a73kq"]
+[ext_resource type="Resource" uid="uid://lf7gcofr706o" path="res://recipies/brick.tres" id="5_0tyok"]
+[ext_resource type="Resource" uid="uid://sqi1ahljyns2" path="res://recipies/Cove.tres" id="6_ynvsd"]
+[ext_resource type="Resource" uid="uid://duwyjjvwcut4p" path="res://recipies/EarthRune.tres" id="7_pdbvk"]
+[ext_resource type="Resource" uid="uid://c6m76j8ein5ar" path="res://recipies/fireRune.tres" id="8_h54yv"]
+[ext_resource type="Resource" uid="uid://dwc547nogeq23" path="res://recipies/Flare.tres" id="9_x4o3h"]
+[ext_resource type="Resource" uid="uid://cnv8r4t5o0rlw" path="res://recipies/gust.tres" id="10_jsf0g"]
+[ext_resource type="Resource" uid="uid://drimnofyx4qml" path="res://recipies/ShadowSelf.tres" id="11_thjj5"]
+[ext_resource type="Resource" uid="uid://d3i8ic2pcxkwi" path="res://recipies/Tsunami.tres" id="12_scc73"]
+[ext_resource type="Resource" uid="uid://b3f208vh0a8cb" path="res://recipies/unstable_concoction.tres" id="13_3a6xf"]
+[ext_resource type="Resource" uid="uid://gwdc4lqyx8bx" path="res://recipies/WaterRune.tres" id="14_1ppax"]
 
 [node name="AlchemistCircle" type="TextureRect"]
 anchors_preset = -1
@@ -24,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rj6li")
 script = ExtResource("2_csryf")
-recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("3_io0ol"), ExtResource("4_t2fa1"), ExtResource("5_w5h1e"), ExtResource("6_mdxkx"), ExtResource("7_lap4k"), ExtResource("8_trwkf"), ExtResource("9_tuq6n"), ExtResource("10_gmweh"), ExtResource("11_ktj8b"), ExtResource("12_l15en"), ExtResource("13_6dn64"), ExtResource("14_vjgab")])
+recipies = Array[Resource("res://src/Recipe.gd")]([ExtResource("3_36jho"), ExtResource("4_a73kq"), ExtResource("5_0tyok"), ExtResource("6_ynvsd"), ExtResource("7_pdbvk"), ExtResource("8_h54yv"), ExtResource("9_x4o3h"), ExtResource("10_jsf0g"), ExtResource("11_thjj5"), ExtResource("12_scc73"), ExtResource("13_3a6xf"), ExtResource("14_1ppax")])
 
 [node name="Slot1" type="Button" parent="."]
 layout_mode = 1
