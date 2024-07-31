@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name ShadowClone
 
-
 @export var damage: int = 5
 
 var speed = 400

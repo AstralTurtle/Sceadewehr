@@ -4,7 +4,8 @@ class_name PlayerUI
 @export var player_name: String = ""
 @export var health = 10
 @export var player: int = 0
-@onready var name_label: Label = get_node("MarginContainer/HBoxContainer/VBoxContainer/NameLabel")
+@onready var name_label: Label = get_node("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/NameLabel")
+@onready var name_icon: TextureRect = get_node("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/NameIcon")
 @onready var hp_label: Label = get_node("MarginContainer/HBoxContainer/VBoxContainer/HPLabel")
 @onready var inventory: FlowContainer = get_node("MarginContainer/HBoxContainer/VBoxContainer/Inventory")
 @onready var alchemist_crafter: AlchemistCircle = get_node("MarginContainer/HBoxContainer/VBoxContainer/Control/AlchemistCircle")
@@ -29,6 +30,7 @@ signal turn_complete()
 signal mouse_pressed()
 
 func _ready():
+	name_icon.texture = load("res://assets/SC1.png") if player == 0 else load("res://assets/SC2.png")
 	name_label.text = player_name
 	hp_label.text = "HP - " + str(health)
 	var old_settings = name_label.label_settings
@@ -38,9 +40,10 @@ func _ready():
 	end_turn.pressed.connect(alchemist_crafter.craft)
 	end_turn.pressed.connect(func(): turn_complete.emit())
 	end_turn.disabled = true
+	for i in inventory.get_children():
+		i.queue_free()
 	for i in test_essences:
 		add_essence(i)
-		
 
 func set_active(is_active: bool):
 	if (is_active):

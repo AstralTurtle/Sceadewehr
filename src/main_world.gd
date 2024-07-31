@@ -6,7 +6,9 @@ class_name MainWorld
 @onready var game_board: GameBoard = $HBoxContainer/AspectRatioContainer/ColorRect/GameBoard
 @onready var shadow_clones: CloneBoard = $HBoxContainer/AspectRatioContainer/ColorRect/CloneBoard
 @onready var music: AudioStreamPlayer = $AudioStreamPlayer
+@onready var hurt_sfx: AudioStreamPlayer = $HurtSFX
 @onready var turn_change_label: Label = $TurnChangeLabel
+@onready var end_screen: PackedScene = load("res://end_screen.tscn")
 var player1_active: bool = true
 
 var turn_counter = 0
@@ -43,7 +45,7 @@ func continue_turn():
 	await active.turn_complete
 	print("hello")
 
-# Switch turn
+	# Switch turn
 	player1_active = !player1_active
 	player1.set_active(player1_active)
 	player2.set_active(!player1_active)
@@ -55,6 +57,21 @@ func continue_turn():
 		get_tree().call_group(ShadowClone.group_name, 'move_forward')
 		shadow_clones.create_clone(0)
 		shadow_clones.create_clone(1)
+	if player1.health < 0 && player2.health < 0:
+		print("hi")
+		Globals.winner = "tie"
+		get_tree().change_scene_to_packed(end_screen)
+		return
+	elif player1.health < 0:
+		print("hi")
+		Globals.winner = player2.player_name
+		get_tree().change_scene_to_packed(end_screen)
+		return
+	elif player2.health < 0:
+		print("hi")
+		Globals.winner = player1.player_name
+		get_tree().change_scene_to_packed(end_screen)
+		return
 
 	turn_change_label.text = "Player 1's Turn!!!" if player1_active else "Player 2's Turn!!!"
 	turn_change_label.show()
@@ -62,6 +79,12 @@ func continue_turn():
 	timer.timeout.connect(func():
 		turn_change_label.hide()
 	)
+	timer = get_tree().create_timer(0.5)
+	await timer.timeout
+	turn_change_label.show()
+	timer = get_tree().create_timer(0.5)
+	await timer.timeout
+	turn_change_label.hide()
 	
 	
 func process_damage(damage: int, team: int):
@@ -69,6 +92,7 @@ func process_damage(damage: int, team: int):
 		player1.decrease_health(damage)
 	elif team == 0:
 		player2.decrease_health(damage)
+	hurt_sfx.play()
 
 func get_player(num: int):
 	if num == 0:

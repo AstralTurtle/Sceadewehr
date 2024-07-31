@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cppqvlypbi5wh"]
+[gd_scene load_steps=7 format=3 uid="uid://cppqvlypbi5wh"]
 
 [ext_resource type="Script" path="res://src/player_ui.gd" id="1_ydabh"]
 [ext_resource type="FontFile" uid="uid://btdkvp2d8fvms" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_16x0j"]
 [ext_resource type="PackedScene" uid="uid://dhm3gg86ro6vg" path="res://AlchemistCircle.tscn" id="2_bqdh4"]
+[ext_resource type="Texture2D" uid="uid://clajejukpuh4i" path="res://assets/SC1.png" id="3_bw72l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8d6ff"]
 font = ExtResource("2_16x0j")
-font_size = 35
+font_size = 32
 font_color = Color(1.1, 1.1, 1.1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4yacj"]
@@ -23,9 +24,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_ydabh")
-player_name = null
-player = null
 test_essences = Array[int]([0])
+
+[node name="bg" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,7 +56,16 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/v_separation = 25
 
-[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="NameIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_bw72l")
+
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Player"
 label_settings = SubResource("LabelSettings_8d6ff")
